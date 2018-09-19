@@ -1751,11 +1751,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\PaySharp\\sample\\PaySharp.Demo(Net)\\PaySharp.Demo(Net).csproj",
+      "projectUniqueName": "E:\\asd\\ZZZPaySharp\\sample\\PaySharp.Demo(Net)\\PaySharp.Demo(Net).csproj",
       "projectName": "PaySharp.Demo(Net)",
-      "projectPath": "C:\\Projects\\PaySharp\\sample\\PaySharp.Demo(Net)\\PaySharp.Demo(Net).csproj",
+      "projectPath": "E:\\asd\\ZZZPaySharp\\sample\\PaySharp.Demo(Net)\\PaySharp.Demo(Net).csproj",
       "packagesPath": "C:\\Users\\zengzz\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\PaySharp\\sample\\PaySharp.Demo(Net)\\obj\\",
+      "outputPath": "E:\\asd\\ZZZPaySharp\\sample\\PaySharp.Demo(Net)\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -1772,23 +1772,23 @@
       "frameworks": {
         "net45": {
           "projectReferences": {
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Alipay\\PaySharp.Alipay.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Alipay\\PaySharp.Alipay.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Alipay\\PaySharp.Alipay.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Alipay\\PaySharp.Alipay.csproj"
             },
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Core.Mvc\\PaySharp.Core.Mvc.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Core.Mvc\\PaySharp.Core.Mvc.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core.Mvc\\PaySharp.Core.Mvc.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core.Mvc\\PaySharp.Core.Mvc.csproj"
             },
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
             },
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Qpay\\PaySharp.Qpay.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Qpay\\PaySharp.Qpay.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Qpay\\PaySharp.Qpay.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Qpay\\PaySharp.Qpay.csproj"
             },
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj"
             },
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj"
             }
           }
         }
