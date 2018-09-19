@@ -309,11 +309,11 @@
   "project": {
     "version": "1.0.1",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\PaySharp\\src\\PaySharp.Core.Mvc\\PaySharp.Core.Mvc.csproj",
+      "projectUniqueName": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core.Mvc\\PaySharp.Core.Mvc.csproj",
       "projectName": "PaySharp.Core.Mvc",
-      "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Core.Mvc\\PaySharp.Core.Mvc.csproj",
+      "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core.Mvc\\PaySharp.Core.Mvc.csproj",
       "packagesPath": "C:\\Users\\zengzz\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Core.Mvc\\obj\\",
+      "outputPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core.Mvc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -332,8 +332,8 @@
       "frameworks": {
         "net45": {
           "projectReferences": {
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
             }
           }
         }

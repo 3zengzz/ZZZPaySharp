@@ -4748,11 +4748,11 @@
   "project": {
     "version": "1.0.3",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\PaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj",
+      "projectUniqueName": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj",
       "projectName": "PaySharp.Unionpay",
-      "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj",
+      "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj",
       "packagesPath": "C:\\Users\\zengzz\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Unionpay\\obj\\",
+      "outputPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Unionpay\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -4773,15 +4773,15 @@
       "frameworks": {
         "net45": {
           "projectReferences": {
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
             }
           }
         },
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
             }
           }
         }

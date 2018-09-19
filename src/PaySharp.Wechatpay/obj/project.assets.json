@@ -4714,11 +4714,11 @@
   "project": {
     "version": "1.0.2",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\PaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj",
+      "projectUniqueName": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj",
       "projectName": "PaySharp.Wechatpay",
-      "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj",
+      "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj",
       "packagesPath": "C:\\Users\\zengzz\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Wechatpay\\obj\\",
+      "outputPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Wechatpay\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "fallbackFolders": [
@@ -4739,15 +4739,15 @@
       "frameworks": {
         "net45": {
           "projectReferences": {
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
             }
           }
         },
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
             }
           }
         }

@@ -7322,11 +7322,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\PaySharp\\test\\PaySharp.UnitTest\\PaySharp.UnitTest.csproj",
+      "projectUniqueName": "E:\\asd\\ZZZPaySharp\\test\\PaySharp.UnitTest\\PaySharp.UnitTest.csproj",
       "projectName": "PaySharp.UnitTest",
-      "projectPath": "C:\\Projects\\PaySharp\\test\\PaySharp.UnitTest\\PaySharp.UnitTest.csproj",
+      "projectPath": "E:\\asd\\ZZZPaySharp\\test\\PaySharp.UnitTest\\PaySharp.UnitTest.csproj",
       "packagesPath": "C:\\Users\\zengzz\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\PaySharp\\test\\PaySharp.UnitTest\\obj\\",
+      "outputPath": "E:\\asd\\ZZZPaySharp\\test\\PaySharp.UnitTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7345,14 +7345,14 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Alipay\\PaySharp.Alipay.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Alipay\\PaySharp.Alipay.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Alipay\\PaySharp.Alipay.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Alipay\\PaySharp.Alipay.csproj"
             },
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj"
             },
-            "C:\\Projects\\PaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj": {
-              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj"
+            "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj": {
+              "projectPath": "E:\\asd\\ZZZPaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj"
             }
           }
         }
