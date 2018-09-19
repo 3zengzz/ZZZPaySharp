@@ -1,0 +1,1875 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "Antlr/3.5.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Antlr3.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
+      "Autofac/4.8.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System"
+        ],
+        "compile": {
+          "lib/net45/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Autofac.dll": {}
+        }
+      },
+      "Autofac.Mvc5/4.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Autofac": "[4.0.1, 5.0.0)",
+          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
+        },
+        "compile": {
+          "lib/net45/Autofac.Integration.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Autofac.Integration.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6, 3.3.0)",
+          "Microsoft.AspNet.WebPages": "[3.2.6, 3.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc.zh-Hans/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "[5.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Mvc.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.Razor/3.2.6": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Web.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Razor.zh-Hans/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Razor.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0",
+          "WebGrease": "1.5.2"
+        },
+        "compile": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization.zh-Hans/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Web.Optimization": "[1.1.3]"
+        },
+        "resource": {
+          "lib/net40/zh-Hans/System.Web.Optimization.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.WebHost": "[5.2.6, 5.3.0)"
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.6"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.WebHost/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "[5.2.6, 5.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6, 3.3.0)",
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages.zh-Hans/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebPages": "[3.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Helpers.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.Deployment.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.Razor.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/net40/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/net40/BouncyCastle.Crypto.dll": {}
+        }
+      },
+      "SharpZipLib/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "System.ComponentModel.Annotations/4.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "WebGrease/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "5.0.4"
+        },
+        "compile": {
+          "lib/WebGrease.dll": {}
+        },
+        "runtime": {
+          "lib/WebGrease.dll": {}
+        }
+      },
+      "PaySharp.Alipay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Alipay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Alipay.dll": {}
+        }
+      },
+      "PaySharp.Core/1.0.6": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "System.ComponentModel.Annotations": "4.1.0"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Core.dll": {}
+        }
+      },
+      "PaySharp.Core.Mvc/1.0.1": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "Autofac.Mvc5": "4.0.1",
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Core.Mvc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Core.Mvc.dll": {}
+        }
+      },
+      "PaySharp.Qpay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Qpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Qpay.dll": {}
+        }
+      },
+      "PaySharp.Unionpay/1.0.3": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6",
+          "Portable.BouncyCastle": "1.8.1.3",
+          "SharpZipLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Unionpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Unionpay.dll": {}
+        }
+      },
+      "PaySharp.Wechatpay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6",
+          "Portable.BouncyCastle": "1.8.1.3"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Wechatpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Wechatpay.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win": {
+      "Antlr/3.5.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Antlr3.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
+      "Autofac/4.8.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System"
+        ],
+        "compile": {
+          "lib/net45/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Autofac.dll": {}
+        }
+      },
+      "Autofac.Mvc5/4.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Autofac": "[4.0.1, 5.0.0)",
+          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
+        },
+        "compile": {
+          "lib/net45/Autofac.Integration.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Autofac.Integration.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6, 3.3.0)",
+          "Microsoft.AspNet.WebPages": "[3.2.6, 3.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc.zh-Hans/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "[5.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Mvc.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.Razor/3.2.6": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Web.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Razor.zh-Hans/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Razor.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0",
+          "WebGrease": "1.5.2"
+        },
+        "compile": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization.zh-Hans/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Web.Optimization": "[1.1.3]"
+        },
+        "resource": {
+          "lib/net40/zh-Hans/System.Web.Optimization.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.WebHost": "[5.2.6, 5.3.0)"
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.6"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.WebHost/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "[5.2.6, 5.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6, 3.3.0)",
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages.zh-Hans/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebPages": "[3.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Helpers.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.Deployment.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.Razor.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/net40/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/net40/BouncyCastle.Crypto.dll": {}
+        }
+      },
+      "SharpZipLib/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "System.ComponentModel.Annotations/4.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "WebGrease/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "5.0.4"
+        },
+        "compile": {
+          "lib/WebGrease.dll": {}
+        },
+        "runtime": {
+          "lib/WebGrease.dll": {}
+        }
+      },
+      "PaySharp.Alipay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Alipay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Alipay.dll": {}
+        }
+      },
+      "PaySharp.Core/1.0.6": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "System.ComponentModel.Annotations": "4.1.0"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Core.dll": {}
+        }
+      },
+      "PaySharp.Core.Mvc/1.0.1": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "Autofac.Mvc5": "4.0.1",
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Core.Mvc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Core.Mvc.dll": {}
+        }
+      },
+      "PaySharp.Qpay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Qpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Qpay.dll": {}
+        }
+      },
+      "PaySharp.Unionpay/1.0.3": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6",
+          "Portable.BouncyCastle": "1.8.1.3",
+          "SharpZipLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Unionpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Unionpay.dll": {}
+        }
+      },
+      "PaySharp.Wechatpay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6",
+          "Portable.BouncyCastle": "1.8.1.3"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Wechatpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Wechatpay.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win-x64": {
+      "Antlr/3.5.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Antlr3.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
+      "Autofac/4.8.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System"
+        ],
+        "compile": {
+          "lib/net45/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Autofac.dll": {}
+        }
+      },
+      "Autofac.Mvc5/4.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Autofac": "[4.0.1, 5.0.0)",
+          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
+        },
+        "compile": {
+          "lib/net45/Autofac.Integration.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Autofac.Integration.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6, 3.3.0)",
+          "Microsoft.AspNet.WebPages": "[3.2.6, 3.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc.zh-Hans/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "[5.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Mvc.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.Razor/3.2.6": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Web.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Razor.zh-Hans/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Razor.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0",
+          "WebGrease": "1.5.2"
+        },
+        "compile": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization.zh-Hans/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Web.Optimization": "[1.1.3]"
+        },
+        "resource": {
+          "lib/net40/zh-Hans/System.Web.Optimization.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.WebHost": "[5.2.6, 5.3.0)"
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.6"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.WebHost/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "[5.2.6, 5.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6, 3.3.0)",
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages.zh-Hans/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebPages": "[3.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Helpers.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.Deployment.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.Razor.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/net40/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/net40/BouncyCastle.Crypto.dll": {}
+        }
+      },
+      "SharpZipLib/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "System.ComponentModel.Annotations/4.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "WebGrease/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "5.0.4"
+        },
+        "compile": {
+          "lib/WebGrease.dll": {}
+        },
+        "runtime": {
+          "lib/WebGrease.dll": {}
+        }
+      },
+      "PaySharp.Alipay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Alipay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Alipay.dll": {}
+        }
+      },
+      "PaySharp.Core/1.0.6": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "System.ComponentModel.Annotations": "4.1.0"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Core.dll": {}
+        }
+      },
+      "PaySharp.Core.Mvc/1.0.1": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "Autofac.Mvc5": "4.0.1",
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Core.Mvc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Core.Mvc.dll": {}
+        }
+      },
+      "PaySharp.Qpay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Qpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Qpay.dll": {}
+        }
+      },
+      "PaySharp.Unionpay/1.0.3": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6",
+          "Portable.BouncyCastle": "1.8.1.3",
+          "SharpZipLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Unionpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Unionpay.dll": {}
+        }
+      },
+      "PaySharp.Wechatpay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6",
+          "Portable.BouncyCastle": "1.8.1.3"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Wechatpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Wechatpay.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.5/win-x86": {
+      "Antlr/3.5.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/Antlr3.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/Antlr3.Runtime.dll": {}
+        }
+      },
+      "Autofac/4.8.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System"
+        ],
+        "compile": {
+          "lib/net45/Autofac.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Autofac.dll": {}
+        }
+      },
+      "Autofac.Mvc5/4.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Autofac": "[4.0.1, 5.0.0)",
+          "Microsoft.AspNet.Mvc": "[5.1.0, 6.0.0)"
+        },
+        "compile": {
+          "lib/net45/Autofac.Integration.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Autofac.Integration.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6, 3.3.0)",
+          "Microsoft.AspNet.WebPages": "[3.2.6, 3.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Mvc.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Mvc.zh-Hans/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Mvc": "[5.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Mvc.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.Razor/3.2.6": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Web.Razor.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Razor.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Razor.zh-Hans/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Razor.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0",
+          "WebGrease": "1.5.2"
+        },
+        "compile": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        },
+        "runtime": {
+          "lib/net40/System.Web.Optimization.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Web.Optimization.zh-Hans/1.1.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Web.Optimization": "[1.1.3]"
+        },
+        "resource": {
+          "lib/net40/zh-Hans/System.Web.Optimization.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.AspNet.WebApi/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.WebHost": "[5.2.6, 5.3.0)"
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.4"
+        },
+        "frameworkAssemblies": [
+          "System.Net.Http"
+        ],
+        "compile": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Formatting.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Core/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.6"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.WebHost/5.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "[5.2.6, 5.3.0)"
+        },
+        "compile": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Http.WebHost.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Razor": "[3.2.6, 3.3.0)",
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebPages.zh-Hans/3.2.6": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebPages": "[3.2.6]"
+        },
+        "resource": {
+          "lib/net45/zh-Hans/System.Web.Helpers.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.Deployment.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.Razor.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net45/zh-Hans/System.Web.WebPages.resources.dll": {
+            "locale": "zh-Hans"
+          }
+        }
+      },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Portable.BouncyCastle/1.8.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/net40/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/net40/BouncyCastle.Crypto.dll": {}
+        }
+      },
+      "SharpZipLib/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        },
+        "runtime": {
+          "lib/net45/ICSharpCode.SharpZipLib.dll": {}
+        }
+      },
+      "System.ComponentModel.Annotations/4.1.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.ComponentModel.DataAnnotations"
+        ],
+        "compile": {
+          "ref/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/_._": {}
+        }
+      },
+      "WebGrease/1.6.0": {
+        "type": "package",
+        "dependencies": {
+          "Antlr": "3.4.1.9004",
+          "Newtonsoft.Json": "5.0.4"
+        },
+        "compile": {
+          "lib/WebGrease.dll": {}
+        },
+        "runtime": {
+          "lib/WebGrease.dll": {}
+        }
+      },
+      "PaySharp.Alipay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Alipay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Alipay.dll": {}
+        }
+      },
+      "PaySharp.Core/1.0.6": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "System.ComponentModel.Annotations": "4.1.0"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Core.dll": {}
+        }
+      },
+      "PaySharp.Core.Mvc/1.0.1": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "Autofac.Mvc5": "4.0.1",
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Core.Mvc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Core.Mvc.dll": {}
+        }
+      },
+      "PaySharp.Qpay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Qpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Qpay.dll": {}
+        }
+      },
+      "PaySharp.Unionpay/1.0.3": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6",
+          "Portable.BouncyCastle": "1.8.1.3",
+          "SharpZipLib": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Unionpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Unionpay.dll": {}
+        }
+      },
+      "PaySharp.Wechatpay/1.0.2": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.5",
+        "dependencies": {
+          "PaySharp.Core": "1.0.6",
+          "Portable.BouncyCastle": "1.8.1.3"
+        },
+        "compile": {
+          "bin/placeholder/PaySharp.Wechatpay.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PaySharp.Wechatpay.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Antlr/3.5.0.2": {
+      "sha512": "CSfrVuDVMx3OrQhT84zed+tOdM1clljyRLWWlQM22fJsmG836RVDGQlE6tzysXh8X8p9UjkHbLr6OqEIVhtdEA==",
+      "type": "package",
+      "path": "antlr/3.5.0.2",
+      "files": [
+        "antlr.3.5.0.2.nupkg.sha512",
+        "antlr.nuspec",
+        "lib/Antlr3.Runtime.dll",
+        "lib/Antlr3.Runtime.pdb"
+      ]
+    },
+    "Autofac/4.8.1": {
+      "sha512": "aIT9rupCOdab5RMfxvWTBmOxGU77tLqmvSF4V89SzV6oQcJrtuKw/Xp55xy9EijSktbMka55SbroAPOyT+lziw==",
+      "type": "package",
+      "path": "autofac/4.8.1",
+      "files": [
+        "autofac.4.8.1.nupkg.sha512",
+        "autofac.nuspec",
+        "lib/net45/Autofac.dll",
+        "lib/net45/Autofac.xml",
+        "lib/netstandard1.1/Autofac.dll",
+        "lib/netstandard1.1/Autofac.xml"
+      ]
+    },
+    "Autofac.Mvc5/4.0.2": {
+      "sha512": "gok9ZMn7ZiZTOtJ7R67mFbS0deDyU5c45CFILIG3bxA3KlKC0jb7E2c0KvYMDS6H1XW2yvUj1XE1z1v8E8v8ww==",
+      "type": "package",
+      "path": "autofac.mvc5/4.0.2",
+      "files": [
+        "autofac.mvc5.4.0.2.nupkg.sha512",
+        "autofac.mvc5.nuspec",
+        "lib/net45/Autofac.Integration.Mvc.dll",
+        "lib/net45/Autofac.Integration.Mvc.xml"
+      ]
+    },
+    "Microsoft.AspNet.Mvc/5.2.6": {
+      "sha512": "kBiyGUUBLE8JyQDTdmsBW0MyKg3VbB6FCrhu2pZiT9uOdS7uqADryIApWnUWmzDj4+4Q3/c/sgBM+Y+kDUFTyg==",
+      "type": "package",
+      "path": "microsoft.aspnet.mvc/5.2.6",
+      "files": [
+        ".signature.p7s",
+        "Content/Web.config.install.xdt",
+        "Content/Web.config.uninstall.xdt",
+        "lib/net45/System.Web.Mvc.dll",
+        "lib/net45/System.Web.Mvc.xml",
+        "microsoft.aspnet.mvc.5.2.6.nupkg.sha512",
+        "microsoft.aspnet.mvc.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Mvc.zh-Hans/5.2.6": {
+      "sha512": "uQ/hCIT+yfOvHrvqH+xun+lIx3TlfLxbBzUF8+YDiUbUSOTsC/ZO9TXSGfcM6KXU2D9D/wG5NrHXWBbjmntS2A==",
+      "type": "package",
+      "path": "microsoft.aspnet.mvc.zh-hans/5.2.6",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/zh-Hans/System.Web.Mvc.resources.dll",
+        "lib/net45/zh-Hans/System.Web.Mvc.xml",
+        "microsoft.aspnet.mvc.zh-hans.5.2.6.nupkg.sha512",
+        "microsoft.aspnet.mvc.zh-hans.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Razor/3.2.6": {
+      "sha512": "AmdtrCaQtafgIzjaJjWjntWCE28c9CZnwSOFBC7zqt9OWJ9+uaxDQYSF1CHlyQOgTCzU7U9kux45cEoXXrwGDw==",
+      "type": "package",
+      "path": "microsoft.aspnet.razor/3.2.6",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/System.Web.Razor.dll",
+        "lib/net45/System.Web.Razor.xml",
+        "microsoft.aspnet.razor.3.2.6.nupkg.sha512",
+        "microsoft.aspnet.razor.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Razor.zh-Hans/3.2.6": {
+      "sha512": "wDdwmnSyQLoEckv86YLfY/SUQb6/DTrLEO7LbcWkvx1DoAWL7ZO32RaOu5+jPLxAVHNyo9n+1BTOZC9sFw4C3w==",
+      "type": "package",
+      "path": "microsoft.aspnet.razor.zh-hans/3.2.6",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/zh-Hans/System.Web.Razor.resources.dll",
+        "lib/net45/zh-Hans/system.web.razor.xml",
+        "microsoft.aspnet.razor.zh-hans.3.2.6.nupkg.sha512",
+        "microsoft.aspnet.razor.zh-hans.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Web.Optimization/1.1.3": {
+      "sha512": "TWKKpTWEdB8jXp2Vl2TXNKW30GBQg6nnh0y8iZWmGY5c1XY4f649vfDslNHsCsvk9JZxc1Rkm/UGDdfq4gjWRQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.web.optimization/1.1.3",
+      "files": [
+        "lib/net40/System.Web.Optimization.dll",
+        "lib/net40/system.web.optimization.xml",
+        "microsoft.aspnet.web.optimization.1.1.3.nupkg.sha512",
+        "microsoft.aspnet.web.optimization.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.Web.Optimization.zh-Hans/1.1.3": {
+      "sha512": "DGchEWJ8tvcj11ZD9zd011VsV8d5BDMGN4n8FbGv4oZwswQ1Ox11bGSoJsEUY8mtIMGb8CODQGXOc1ME7+aF7g==",
+      "type": "package",
+      "path": "microsoft.aspnet.web.optimization.zh-hans/1.1.3",
+      "files": [
+        "lib/net40/zh-Hans/System.Web.Optimization.resources.dll",
+        "microsoft.aspnet.web.optimization.zh-hans.1.1.3.nupkg.sha512",
+        "microsoft.aspnet.web.optimization.zh-hans.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi/5.2.6": {
+      "sha512": "98urF4oTw2+rtcd6Mq/neuWh1YaeHfaiqUSMe31bTsjkOaKbxUfyOpc+Ny9DHwPcg9WAqOgF9pEYEBhbSCbFIA==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi/5.2.6",
+      "files": [
+        ".signature.p7s",
+        "microsoft.aspnet.webapi.5.2.6.nupkg.sha512",
+        "microsoft.aspnet.webapi.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Client/5.2.6": {
+      "sha512": "rMDlyePoxggkmN/qgha1+BR2Uy+dOr38xKCQOPfVNKGY07R2nYJGMTKJFE1XFgwD70RYUNazf2fqutjJF18XgQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.client/5.2.6",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/System.Net.Http.Formatting.dll",
+        "lib/net45/System.Net.Http.Formatting.xml",
+        "lib/netstandard2.0/System.Net.Http.Formatting.dll",
+        "lib/netstandard2.0/System.Net.Http.Formatting.xml",
+        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
+        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml",
+        "microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
+        "microsoft.aspnet.webapi.client.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.Core/5.2.6": {
+      "sha512": "QMFixs/MvKZXjfUbV0gXxF85LKi+keu/zJKv13upg/JlcxJ+wdLSYzyHO/sgPPUuFVstgndK6Zt3VduWeqFmHQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.core/5.2.6",
+      "files": [
+        ".signature.p7s",
+        "Content/web.config.transform",
+        "lib/net45/System.Web.Http.dll",
+        "lib/net45/System.Web.Http.xml",
+        "microsoft.aspnet.webapi.core.5.2.6.nupkg.sha512",
+        "microsoft.aspnet.webapi.core.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebApi.WebHost/5.2.6": {
+      "sha512": "ny16MQ4+96uvpirNl3psecTqb3joOh0X0RS/6UQYt5oty67gV2GhPn07nt57E3/2tCmnhoSOKl9/Shenp2m3kA==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.webhost/5.2.6",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/System.Web.Http.WebHost.dll",
+        "lib/net45/System.Web.Http.WebHost.xml",
+        "microsoft.aspnet.webapi.webhost.5.2.6.nupkg.sha512",
+        "microsoft.aspnet.webapi.webhost.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebPages/3.2.6": {
+      "sha512": "Cr2MOsKLhxR0aM5LlrTKYPxbDZk8IIdEyxm7qcs8v1hn7VFgk9igvCM4R/sYqy6MN+9v3ry77D7aCsp542t1Dw==",
+      "type": "package",
+      "path": "microsoft.aspnet.webpages/3.2.6",
+      "files": [
+        ".signature.p7s",
+        "Content/Web.config.install.xdt",
+        "Content/Web.config.uninstall.xdt",
+        "lib/net45/System.Web.Helpers.dll",
+        "lib/net45/System.Web.Helpers.xml",
+        "lib/net45/System.Web.WebPages.Deployment.dll",
+        "lib/net45/System.Web.WebPages.Deployment.xml",
+        "lib/net45/System.Web.WebPages.Razor.dll",
+        "lib/net45/System.Web.WebPages.Razor.xml",
+        "lib/net45/System.Web.WebPages.dll",
+        "lib/net45/System.Web.WebPages.xml",
+        "microsoft.aspnet.webpages.3.2.6.nupkg.sha512",
+        "microsoft.aspnet.webpages.nuspec"
+      ]
+    },
+    "Microsoft.AspNet.WebPages.zh-Hans/3.2.6": {
+      "sha512": "w0gAOdjkNqrRijmyDyuY0icFkZFoFl5IlQBAw2dPdItORCtK8XNgpfcbLqPT++/fFgOs7wVFWjp35TlbcXyh3w==",
+      "type": "package",
+      "path": "microsoft.aspnet.webpages.zh-hans/3.2.6",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/zh-Hans/System.Web.Helpers.resources.dll",
+        "lib/net45/zh-Hans/System.Web.WebPages.Deployment.resources.dll",
+        "lib/net45/zh-Hans/System.Web.WebPages.Razor.resources.dll",
+        "lib/net45/zh-Hans/System.Web.WebPages.resources.dll",
+        "lib/net45/zh-Hans/system.web.helpers.xml",
+        "lib/net45/zh-Hans/system.web.webpages.deployment.xml",
+        "lib/net45/zh-Hans/system.web.webpages.razor.xml",
+        "lib/net45/zh-Hans/system.web.webpages.xml",
+        "microsoft.aspnet.webpages.zh-hans.3.2.6.nupkg.sha512",
+        "microsoft.aspnet.webpages.zh-hans.nuspec"
+      ]
+    },
+    "Microsoft.Web.Infrastructure/1.0.0": {
+      "sha512": "FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
+      "type": "package",
+      "path": "microsoft.web.infrastructure/1.0.0",
+      "files": [
+        "lib/net40/Microsoft.Web.Infrastructure.dll",
+        "microsoft.web.infrastructure.1.0.0.nupkg.sha512",
+        "microsoft.web.infrastructure.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "type": "package",
+      "path": "newtonsoft.json/11.0.2",
+      "files": [
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
+      ]
+    },
+    "Portable.BouncyCastle/1.8.1.3": {
+      "sha512": "1jUpszv0ETm+hl78HKnYgY3wPzt6qRtjxaPENNrGCuB8nondbR/j75WAKdd6sxXzOzBcX07WMZhZEYc4s5jVWg==",
+      "type": "package",
+      "path": "portable.bouncycastle/1.8.1.3",
+      "files": [
+        "lib/net40/BouncyCastle.Crypto.dll",
+        "lib/net40/BouncyCastle.Crypto.xml",
+        "lib/netstandard1.0/BouncyCastle.Crypto.dll",
+        "lib/netstandard1.0/BouncyCastle.Crypto.xml",
+        "lib/netstandard1.3/BouncyCastle.Crypto.dll",
+        "lib/netstandard1.3/BouncyCastle.Crypto.xml",
+        "lib/netstandard2.0/BouncyCastle.Crypto.dll",
+        "lib/netstandard2.0/BouncyCastle.Crypto.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/BouncyCastle.Crypto.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/BouncyCastle.Crypto.xml",
+        "portable.bouncycastle.1.8.1.3.nupkg.sha512",
+        "portable.bouncycastle.nuspec"
+      ]
+    },
+    "SharpZipLib/1.0.0": {
+      "sha512": "38egGevtPMQn/6olZZUteKUC7+BD47LdCGKo9Vyj17+HWDwiqPXsyJu55q9WSybhwVKwt0q2FLhiuJjZfQpsHw==",
+      "type": "package",
+      "path": "sharpziplib/1.0.0",
+      "files": [
+        ".signature.p7s",
+        "lib/net45/ICSharpCode.SharpZipLib.dll",
+        "lib/net45/ICSharpCode.SharpZipLib.xml",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.dll",
+        "lib/netstandard2.0/ICSharpCode.SharpZipLib.xml",
+        "sharpziplib.1.0.0.nupkg.sha512",
+        "sharpziplib.nuspec"
+      ]
+    },
+    "System.ComponentModel.Annotations/4.1.0": {
+      "sha512": "rhnz80h8NnHJzoi0nbQJLRR2cJznyqG168q1bgoSpe5qpaME2SguXzuEzpY68nFCi2kBgHpbU4bRN2cP3unYRA==",
+      "type": "package",
+      "path": "system.componentmodel.annotations/4.1.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net461/System.ComponentModel.Annotations.dll",
+        "lib/netcore50/System.ComponentModel.Annotations.dll",
+        "lib/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "lib/portable-net45+win8/_._",
+        "lib/win8/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net461/System.ComponentModel.Annotations.dll",
+        "ref/netcore50/System.ComponentModel.Annotations.dll",
+        "ref/netcore50/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/de/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/es/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/fr/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/it/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ja/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ko/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ru/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/portable-net45+win8/_._",
+        "ref/win8/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.annotations.4.1.0.nupkg.sha512",
+        "system.componentmodel.annotations.nuspec"
+      ]
+    },
+    "WebGrease/1.6.0": {
+      "sha512": "1d29edoh4IZPLig82coowiPBS1ltxT97PwEIkOk0dHqtJwD9v5C7gPm6Ot1hKHT86otKm04oDQ00x5c+PyVyxw==",
+      "type": "package",
+      "path": "webgrease/1.6.0",
+      "files": [
+        "lib/WebGrease.dll",
+        "tools/WG.EXE",
+        "webgrease.1.6.0.nupkg.sha512",
+        "webgrease.nuspec"
+      ]
+    },
+    "PaySharp.Alipay/1.0.2": {
+      "type": "project",
+      "path": "../../src/PaySharp.Alipay/PaySharp.Alipay.csproj",
+      "msbuildProject": "../../src/PaySharp.Alipay/PaySharp.Alipay.csproj"
+    },
+    "PaySharp.Core/1.0.6": {
+      "type": "project",
+      "path": "../../src/PaySharp.Core/PaySharp.Core.csproj",
+      "msbuildProject": "../../src/PaySharp.Core/PaySharp.Core.csproj"
+    },
+    "PaySharp.Core.Mvc/1.0.1": {
+      "type": "project",
+      "path": "../../src/PaySharp.Core.Mvc/PaySharp.Core.Mvc.csproj",
+      "msbuildProject": "../../src/PaySharp.Core.Mvc/PaySharp.Core.Mvc.csproj"
+    },
+    "PaySharp.Qpay/1.0.2": {
+      "type": "project",
+      "path": "../../src/PaySharp.Qpay/PaySharp.Qpay.csproj",
+      "msbuildProject": "../../src/PaySharp.Qpay/PaySharp.Qpay.csproj"
+    },
+    "PaySharp.Unionpay/1.0.3": {
+      "type": "project",
+      "path": "../../src/PaySharp.Unionpay/PaySharp.Unionpay.csproj",
+      "msbuildProject": "../../src/PaySharp.Unionpay/PaySharp.Unionpay.csproj"
+    },
+    "PaySharp.Wechatpay/1.0.2": {
+      "type": "project",
+      "path": "../../src/PaySharp.Wechatpay/PaySharp.Wechatpay.csproj",
+      "msbuildProject": "../../src/PaySharp.Wechatpay/PaySharp.Wechatpay.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.5": [
+      "Antlr >= 3.5.0.2",
+      "Autofac >= 4.8.1",
+      "Autofac.Mvc5 >= 4.0.2",
+      "Microsoft.AspNet.Mvc >= 5.2.6",
+      "Microsoft.AspNet.Mvc.zh-Hans >= 5.2.6",
+      "Microsoft.AspNet.Razor >= 3.2.6",
+      "Microsoft.AspNet.Razor.zh-Hans >= 3.2.6",
+      "Microsoft.AspNet.Web.Optimization >= 1.1.3",
+      "Microsoft.AspNet.Web.Optimization.zh-Hans >= 1.1.3",
+      "Microsoft.AspNet.WebApi >= 5.2.6",
+      "Microsoft.AspNet.WebPages >= 3.2.6",
+      "Microsoft.AspNet.WebPages.zh-Hans >= 3.2.6",
+      "Microsoft.Web.Infrastructure >= 1.0.0",
+      "Newtonsoft.Json >= 11.0.2",
+      "PaySharp.Alipay >= 1.0.2",
+      "PaySharp.Core >= 1.0.6",
+      "PaySharp.Core.Mvc >= 1.0.1",
+      "PaySharp.Qpay >= 1.0.2",
+      "PaySharp.Unionpay >= 1.0.3",
+      "PaySharp.Wechatpay >= 1.0.2",
+      "WebGrease >= 1.6.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\zengzz\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Projects\\PaySharp\\sample\\PaySharp.Demo(Net)\\PaySharp.Demo(Net).csproj",
+      "projectName": "PaySharp.Demo(Net)",
+      "projectPath": "C:\\Projects\\PaySharp\\sample\\PaySharp.Demo(Net)\\PaySharp.Demo(Net).csproj",
+      "packagesPath": "C:\\Users\\zengzz\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\PaySharp\\sample\\PaySharp.Demo(Net)\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\zengzz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net45"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net45": {
+          "projectReferences": {
+            "C:\\Projects\\PaySharp\\src\\PaySharp.Alipay\\PaySharp.Alipay.csproj": {
+              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Alipay\\PaySharp.Alipay.csproj"
+            },
+            "C:\\Projects\\PaySharp\\src\\PaySharp.Core.Mvc\\PaySharp.Core.Mvc.csproj": {
+              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Core.Mvc\\PaySharp.Core.Mvc.csproj"
+            },
+            "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj": {
+              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Core\\PaySharp.Core.csproj"
+            },
+            "C:\\Projects\\PaySharp\\src\\PaySharp.Qpay\\PaySharp.Qpay.csproj": {
+              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Qpay\\PaySharp.Qpay.csproj"
+            },
+            "C:\\Projects\\PaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj": {
+              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Unionpay\\PaySharp.Unionpay.csproj"
+            },
+            "C:\\Projects\\PaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj": {
+              "projectPath": "C:\\Projects\\PaySharp\\src\\PaySharp.Wechatpay\\PaySharp.Wechatpay.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net45": {
+        "dependencies": {
+          "Antlr": {
+            "target": "Package",
+            "version": "[3.5.0.2, )"
+          },
+          "Autofac": {
+            "target": "Package",
+            "version": "[4.8.1, )"
+          },
+          "Autofac.Mvc5": {
+            "target": "Package",
+            "version": "[4.0.2, )"
+          },
+          "Microsoft.AspNet.Mvc": {
+            "target": "Package",
+            "version": "[5.2.6, )"
+          },
+          "Microsoft.AspNet.Mvc.zh-Hans": {
+            "target": "Package",
+            "version": "[5.2.6, )"
+          },
+          "Microsoft.AspNet.Razor": {
+            "target": "Package",
+            "version": "[3.2.6, )"
+          },
+          "Microsoft.AspNet.Razor.zh-Hans": {
+            "target": "Package",
+            "version": "[3.2.6, )"
+          },
+          "Microsoft.AspNet.Web.Optimization": {
+            "target": "Package",
+            "version": "[1.1.3, )"
+          },
+          "Microsoft.AspNet.Web.Optimization.zh-Hans": {
+            "target": "Package",
+            "version": "[1.1.3, )"
+          },
+          "Microsoft.AspNet.WebApi": {
+            "target": "Package",
+            "version": "[5.2.6, )"
+          },
+          "Microsoft.AspNet.WebPages": {
+            "target": "Package",
+            "version": "[3.2.6, )"
+          },
+          "Microsoft.AspNet.WebPages.zh-Hans": {
+            "target": "Package",
+            "version": "[3.2.6, )"
+          },
+          "Microsoft.Web.Infrastructure": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[11.0.2, )"
+          },
+          "WebGrease": {
+            "target": "Package",
+            "version": "[1.6.0, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

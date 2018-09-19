@@ -1,0 +1,9 @@
+C:\Projects\PaySharp\src\PaySharp.Core\bin\Debug\netstandard2.0\PaySharp.Core.deps.json
+C:\Projects\PaySharp\src\PaySharp.Core\bin\Debug\netstandard2.0\PaySharp.Core.dll
+C:\Projects\PaySharp\src\PaySharp.Core\bin\Debug\netstandard2.0\PaySharp.Core.pdb
+C:\Projects\PaySharp\src\PaySharp.Core\obj\Debug\netstandard2.0\PaySharp.Core.csprojAssemblyReference.cache
+C:\Projects\PaySharp\src\PaySharp.Core\obj\Debug\netstandard2.0\PaySharp.Core.csproj.CoreCompileInputs.cache
+C:\Projects\PaySharp\src\PaySharp.Core\obj\Debug\netstandard2.0\PaySharp.Core.AssemblyInfoInputs.cache
+C:\Projects\PaySharp\src\PaySharp.Core\obj\Debug\netstandard2.0\PaySharp.Core.AssemblyInfo.cs
+C:\Projects\PaySharp\src\PaySharp.Core\obj\Debug\netstandard2.0\PaySharp.Core.dll
+C:\Projects\PaySharp\src\PaySharp.Core\obj\Debug\netstandard2.0\PaySharp.Core.pdb

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="../../packaging.props" />
+  
+  <PropertyGroup>
+    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
+    <Title>PaySharp.Alipay</Title>
+    <Description>支付宝支付</Description>
+    <Version>1.0.2</Version>
+    <PackageTags>dotnetcore;pay;alipay;</PackageTags>
+    <PackageReleaseNotes>
+      增加退款异步通知
+    </PackageReleaseNotes>
+  </PropertyGroup>
+
+  <Import Project="../../output.props" />
+  
+  <Import Project="../../dependencies.props" />
+
+</Project>

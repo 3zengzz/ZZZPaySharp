@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>PaySharp.Unionpay</id>
+    <version>1.0.3</version>
+    <title>PaySharp.Unionpay</title>
+    <authors>Varorbc</authors>
+    <owners>Varorbc</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/Varorbc/PaySharp/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Varorbc/PaySharp</projectUrl>
+    <iconUrl>https://github.com/Varorbc/PaySharp/raw/master/logo.png</iconUrl>
+    <description>银联支付</description>
+    <releaseNotes>更新SharpZipLib</releaseNotes>
+    <copyright>Varorbc</copyright>
+    <tags>dotnetcore pay unionpay</tags>
+    <repository type="git" url="https://github.com/Varorbc/PaySharp" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="PaySharp.Core" version="1.0.6" exclude="Build,Analyzers" />
+        <dependency id="Portable.BouncyCastle" version="1.8.1.3" exclude="Build,Analyzers" />
+        <dependency id="SharpZipLib" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="PaySharp.Core" version="1.0.6" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Binder" version="2.0.0" exclude="Build,Analyzers" />
+        <dependency id="Portable.BouncyCastle" version="1.8.1.3" exclude="Build,Analyzers" />
+        <dependency id="SharpZipLib" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Web" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="C:\Projects\PaySharp\src\PaySharp.Unionpay\bin\Debug\net45\PaySharp.Unionpay.dll" target="lib\net45\PaySharp.Unionpay.dll" />
+    <file src="C:\Projects\PaySharp\src\PaySharp.Unionpay\bin\Debug\netstandard2.0\PaySharp.Unionpay.dll" target="lib\netstandard2.0\PaySharp.Unionpay.dll" />
+  </files>
+</package>

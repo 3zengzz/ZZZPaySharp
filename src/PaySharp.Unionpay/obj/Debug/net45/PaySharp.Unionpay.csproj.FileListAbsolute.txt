@@ -1,0 +1,16 @@
+C:\Projects\PaySharp\src\PaySharp.Unionpay\bin\Debug\net45\PaySharp.Unionpay.dll
+C:\Projects\PaySharp\src\PaySharp.Unionpay\bin\Debug\net45\PaySharp.Unionpay.pdb
+C:\Projects\PaySharp\src\PaySharp.Unionpay\bin\Debug\net45\Newtonsoft.Json.dll
+C:\Projects\PaySharp\src\PaySharp.Unionpay\bin\Debug\net45\BouncyCastle.Crypto.dll
+C:\Projects\PaySharp\src\PaySharp.Unionpay\bin\Debug\net45\ICSharpCode.SharpZipLib.dll
+C:\Projects\PaySharp\src\PaySharp.Unionpay\bin\Debug\net45\PaySharp.Core.dll
+C:\Projects\PaySharp\src\PaySharp.Unionpay\bin\Debug\net45\PaySharp.Core.pdb
+C:\Projects\PaySharp\src\PaySharp.Unionpay\obj\Debug\net45\PaySharp.Unionpay.csprojAssemblyReference.cache
+C:\Projects\PaySharp\src\PaySharp.Unionpay\obj\Debug\net45\PaySharp.Unionpay.Properties.Resources.resources
+C:\Projects\PaySharp\src\PaySharp.Unionpay\obj\Debug\net45\PaySharp.Unionpay.csproj.GenerateResource.cache
+C:\Projects\PaySharp\src\PaySharp.Unionpay\obj\Debug\net45\PaySharp.Unionpay.csproj.CoreCompileInputs.cache
+C:\Projects\PaySharp\src\PaySharp.Unionpay\obj\Debug\net45\PaySharp.Unionpay.AssemblyInfoInputs.cache
+C:\Projects\PaySharp\src\PaySharp.Unionpay\obj\Debug\net45\PaySharp.Unionpay.AssemblyInfo.cs
+C:\Projects\PaySharp\src\PaySharp.Unionpay\obj\Debug\net45\PaySharp.Unionpay.csproj.CopyComplete
+C:\Projects\PaySharp\src\PaySharp.Unionpay\obj\Debug\net45\PaySharp.Unionpay.dll
+C:\Projects\PaySharp\src\PaySharp.Unionpay\obj\Debug\net45\PaySharp.Unionpay.pdb

@@ -1,0 +1,12 @@
+C:\Projects\PaySharp\src\PaySharp.Alipay\bin\Debug\netstandard2.0\PaySharp.Alipay.deps.json
+C:\Projects\PaySharp\src\PaySharp.Alipay\bin\Debug\netstandard2.0\PaySharp.Alipay.dll
+C:\Projects\PaySharp\src\PaySharp.Alipay\bin\Debug\netstandard2.0\PaySharp.Alipay.pdb
+C:\Projects\PaySharp\src\PaySharp.Alipay\bin\Debug\netstandard2.0\PaySharp.Core.dll
+C:\Projects\PaySharp\src\PaySharp.Alipay\bin\Debug\netstandard2.0\PaySharp.Core.pdb
+C:\Projects\PaySharp\src\PaySharp.Alipay\obj\Debug\netstandard2.0\PaySharp.Alipay.csprojAssemblyReference.cache
+C:\Projects\PaySharp\src\PaySharp.Alipay\obj\Debug\netstandard2.0\PaySharp.Alipay.csproj.CoreCompileInputs.cache
+C:\Projects\PaySharp\src\PaySharp.Alipay\obj\Debug\netstandard2.0\PaySharp.Alipay.AssemblyInfoInputs.cache
+C:\Projects\PaySharp\src\PaySharp.Alipay\obj\Debug\netstandard2.0\PaySharp.Alipay.AssemblyInfo.cs
+C:\Projects\PaySharp\src\PaySharp.Alipay\obj\Debug\netstandard2.0\PaySharp.Alipay.csproj.CopyComplete
+C:\Projects\PaySharp\src\PaySharp.Alipay\obj\Debug\netstandard2.0\PaySharp.Alipay.dll
+C:\Projects\PaySharp\src\PaySharp.Alipay\obj\Debug\netstandard2.0\PaySharp.Alipay.pdb

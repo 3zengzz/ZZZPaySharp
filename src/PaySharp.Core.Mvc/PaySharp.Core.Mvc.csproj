@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="../../packaging.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net45</TargetFramework>
+    <Title>PaySharp.Core.Mvc</Title>
+    <Description>Mvc</Description>
+    <Version>1.0.1</Version>
+    <PackageTags>dotnetcore;pay;</PackageTags>
+    <PackageReleaseNotes>修改命名空间</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Mvc5" Version="4.0.1" />
+    <!--<PackageReference Include="Autofac.WebApi2" Version="4.1.0" />-->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PaySharp.Core\PaySharp.Core.csproj" />
+  </ItemGroup>
+
+  <Import Project="../../output.props" />
+  
+</Project>

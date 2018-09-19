@@ -1,0 +1,13 @@
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\bin\Debug\net45\PaySharp.Wechatpay.dll
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\bin\Debug\net45\PaySharp.Wechatpay.pdb
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\bin\Debug\net45\Newtonsoft.Json.dll
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\bin\Debug\net45\BouncyCastle.Crypto.dll
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\bin\Debug\net45\PaySharp.Core.dll
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\bin\Debug\net45\PaySharp.Core.pdb
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\obj\Debug\net45\PaySharp.Wechatpay.csprojAssemblyReference.cache
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\obj\Debug\net45\PaySharp.Wechatpay.csproj.CoreCompileInputs.cache
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\obj\Debug\net45\PaySharp.Wechatpay.AssemblyInfoInputs.cache
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\obj\Debug\net45\PaySharp.Wechatpay.AssemblyInfo.cs
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\obj\Debug\net45\PaySharp.Wechatpay.csproj.CopyComplete
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\obj\Debug\net45\PaySharp.Wechatpay.dll
+C:\Projects\PaySharp\src\PaySharp.Wechatpay\obj\Debug\net45\PaySharp.Wechatpay.pdb
