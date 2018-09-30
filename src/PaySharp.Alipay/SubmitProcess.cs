@@ -15,24 +15,16 @@ namespace PaySharp.Alipay
     {
         private static string _gatewayUrl;
 
-        internal static TResponse Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request, string gatewayUrl = null) where TResponse : IResponse
+        internal static async Task<TResponse> Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request, string gatewayUrl = null) where TResponse : IResponse
         {
             AddMerchant(merchant, request, gatewayUrl);
 
-            string result = null;
-            Task.Run(async () =>
-            {
-                result = await HttpUtil
-                 .PostAsync(request.RequestUrl, request.GatewayData.ToUrl());
-            })
-            .GetAwaiter()
-            .GetResult();
-
+            string result = await HttpUtil.PostAsync(request.RequestUrl, request.GatewayData.ToUrl());           
+        
             var jObject = JObject.Parse(result);
             var jToken = jObject.First.First;
             string sign = jObject.Value<string>("sign");
-            if (!string.IsNullOrEmpty(sign) &&
-                !CheckSign(jToken.ToString(Formatting.None), sign, merchant.AlipayPublicKey, merchant.SignType))
+            if (!string.IsNullOrEmpty(sign) && !CheckSign(jToken.ToString(Formatting.None), sign, merchant.AlipayPublicKey, merchant.SignType))
             {
                 throw new GatewayException("签名验证失败");
             }
@@ -44,11 +36,11 @@ namespace PaySharp.Alipay
             return (TResponse)(object)baseResponse;
         }
 
-        internal static TResponse SdkExecute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request, string gatewayUrl) where TResponse : IResponse
+        internal static Task<TResponse> SdkExecute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request, string gatewayUrl) where TResponse : IResponse
         {
             AddMerchant(merchant, request, gatewayUrl);
 
-            return (TResponse)Activator.CreateInstance(typeof(TResponse), request);
+            return Task.FromResult((TResponse)Activator.CreateInstance(typeof(TResponse), request));
         }
 
         private static void AddMerchant<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request, string gatewayUrl) where TResponse : IResponse

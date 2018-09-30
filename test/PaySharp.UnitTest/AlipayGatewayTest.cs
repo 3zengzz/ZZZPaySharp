@@ -38,7 +38,7 @@ namespace PaySharp.UnitTest
         }
 
         [Fact]
-        public void TestWebPay()
+        public async Task TestWebPay()
         {
             var request = new WebPayRequest();
             request.AddGatewayData(new WebPayModel()
@@ -48,7 +48,7 @@ namespace PaySharp.UnitTest
                 OutTradeNo = _outTradeNo
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response =await _alipayGateway.Execute(request);
 
             _output.WriteLine(response.Html);
             Assert.NotNull(response.Html);
@@ -65,15 +65,15 @@ namespace PaySharp.UnitTest
                 OutTradeNo = _outTradeNo
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response =await _alipayGateway.Execute(request);
 
             _output.WriteLine(response.Url);
-            string result =await HttpUtil.Get(response.Url);
+            string result = await HttpUtil.Get(response.Url);
             Assert.Contains("支付宝", result);
         }
 
         [Fact]
-        public void TestAppPay()
+        public async Task TestAppPay()
         {
             var request = new AppPayRequest();
             request.AddGatewayData(new AppPayModel()
@@ -83,14 +83,14 @@ namespace PaySharp.UnitTest
                 OutTradeNo = _outTradeNo
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response = await _alipayGateway.Execute(request);
 
             _output.WriteLine(response.OrderInfo);
             Assert.NotNull(response.OrderInfo);
         }
 
         [Fact]
-        public void TestBarcodePay()
+        public async Task TestBarcodePay()
         {
             var request = new BarcodePayRequest();
             request.AddGatewayData(new BarcodePayModel()
@@ -103,7 +103,7 @@ namespace PaySharp.UnitTest
             request.PaySucceed += BarcodePay_PaySucceed;
             request.PayFailed += BarcodePay_PayFaild;
 
-            var response = _alipayGateway.Execute(request);
+            var response = await _alipayGateway.Execute(request);
             Assert.Equal("40004", response.Code);
         }
 
@@ -116,7 +116,7 @@ namespace PaySharp.UnitTest
         }
 
         [Fact]
-        public void TestScanPay()
+        public async Task TestScanPay()
         {
             var request = new ScanPayRequest();
             request.AddGatewayData(new ScanPayModel()
@@ -126,14 +126,14 @@ namespace PaySharp.UnitTest
                 OutTradeNo = _outTradeNo
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response = await _alipayGateway.Execute(request);
 
             _output.WriteLine(response.QrCode);
             Assert.NotNull(response.QrCode);
         }
 
         [Fact]
-        public void TestQuery()
+        public async Task TestQuery()
         {
             var request = new QueryRequest();
             request.AddGatewayData(new QueryModel()
@@ -141,12 +141,12 @@ namespace PaySharp.UnitTest
                 OutTradeNo = _outTradeNo
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response = await _alipayGateway.Execute(request);
             Assert.Equal("40004", response.Code);
         }
 
         [Fact]
-        public void TestCancel()
+        public async Task TestCancel()
         {
             var request = new CancelRequest();
             request.AddGatewayData(new CancelModel()
@@ -154,12 +154,12 @@ namespace PaySharp.UnitTest
                 OutTradeNo = _outTradeNo
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response = await _alipayGateway.Execute(request);
             Assert.Equal("10000", response.Code);
         }
 
         [Fact]
-        public void TestClose()
+        public async Task TestClose()
         {
             var request = new CloseRequest();
             request.AddGatewayData(new CloseModel()
@@ -167,12 +167,12 @@ namespace PaySharp.UnitTest
                 OutTradeNo = _outTradeNo
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response = await _alipayGateway.Execute(request);
             Assert.Equal("40004", response.Code);
         }
 
         [Fact]
-        public void TestRefund()
+        public async Task TestRefund()
         {
             var request = new RefundRequest();
             request.AddGatewayData(new RefundModel()
@@ -182,12 +182,12 @@ namespace PaySharp.UnitTest
                 OutRefundNo = _outRefundNo
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response = await _alipayGateway.Execute(request);
             Assert.Equal("40004", response.Code);
         }
 
         [Fact]
-        public void TestRefundQuery()
+        public async Task TestRefundQuery()
         {
             var request = new RefundQueryRequest();
             request.AddGatewayData(new RefundQueryModel()
@@ -196,12 +196,12 @@ namespace PaySharp.UnitTest
                 OutRefundNo = _outRefundNo
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response = await _alipayGateway.Execute(request);
             Assert.Equal("40004", response.Code);
         }
 
         [Fact]
-        public void TestTransfer()
+        public async Task TestTransfer()
         {
             var request = new TransferRequest();
             request.AddGatewayData(new TransferModel()
@@ -212,12 +212,12 @@ namespace PaySharp.UnitTest
                 PayeeType = "ALIPAY_LOGONID"
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response = await _alipayGateway.Execute(request);
             Assert.Equal("10000", response.Code);
         }
 
         [Fact]
-        public void TestTransferQuery()
+        public async Task TestTransferQuery()
         {
             var request = new TransferQueryRequest();
             request.AddGatewayData(new TransferQueryModel()
@@ -225,12 +225,12 @@ namespace PaySharp.UnitTest
                 OutTradeNo = _outTradeNo
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response = await _alipayGateway.Execute(request);
             Assert.Equal("40004", response.Code);
         }
 
         [Fact]
-        public void TestBillDownload()
+        public async Task TestBillDownload()
         {
             var request = new BillDownloadRequest();
             request.AddGatewayData(new BillDownloadModel()
@@ -239,7 +239,7 @@ namespace PaySharp.UnitTest
                 BillType = "trade"
             });
 
-            var response = _alipayGateway.Execute(request);
+            var response = await _alipayGateway.Execute(request);
             Assert.True(response.GetBillFile().Length > 0);
         }
     }

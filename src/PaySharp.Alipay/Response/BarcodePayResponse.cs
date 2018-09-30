@@ -150,7 +150,7 @@ namespace PaySharp.Alipay.Response
         public double DiscountAmount { get; set; }
 
         private Merchant _merchant;
-        internal override void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
+        internal override async Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
         {
             _merchant = merchant;
             var barcodePayRequest = request as BarcodePayRequest;
@@ -163,17 +163,7 @@ namespace PaySharp.Alipay.Response
 
             if (!string.IsNullOrEmpty(TradeNo))
             {
-                var queryResponse = new QueryResponse();
-                Task.Run(async () =>
-                {
-                    queryResponse = await PollQueryTradeStateAsync(
-                        TradeNo,
-                        barcodePayRequest.PollTime,
-                        barcodePayRequest.PollCount);
-                })
-                .GetAwaiter()
-                .GetResult();
-
+                var queryResponse = await PollQueryTradeStateAsync(TradeNo, barcodePayRequest.PollTime, barcodePayRequest.PollCount);
                 if (queryResponse != null)
                 {
                     barcodePayRequest.OnPaySucceed(queryResponse, null);
@@ -196,7 +186,7 @@ namespace PaySharp.Alipay.Response
         /// <param name="pollTime">轮询间隔</param>
         /// <param name="pollCount">轮询次数</param>
         /// <returns></returns>
-        private QueryResponse PollQueryTradeState(string tradeNo, int pollTime, int pollCount)
+        private async Task<QueryResponse> PollQueryTradeState(string tradeNo, int pollTime, int pollCount)
         {
             for (int i = 0; i < pollCount; i++)
             {
@@ -205,7 +195,7 @@ namespace PaySharp.Alipay.Response
                 {
                     TradeNo = tradeNo
                 });
-                var queryResponse = SubmitProcess.Execute(_merchant, queryRequest);
+                var queryResponse = await SubmitProcess.Execute(_merchant, queryRequest);
                 if (queryResponse.TradeStatus == "TRADE_SUCCESS")
                 {
                     return queryResponse;
@@ -220,7 +210,7 @@ namespace PaySharp.Alipay.Response
             {
                 TradeNo = tradeNo
             });
-            SubmitProcess.Execute(_merchant, cancelRequest);
+            await SubmitProcess.Execute(_merchant, cancelRequest);
 
             return null;
         }

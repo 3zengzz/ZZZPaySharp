@@ -15,7 +15,7 @@ namespace PaySharp.Qpay
     {
         private static string _gatewayUrl;
 
-        internal static TResponse Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request, string gatewayUrl = null) where TResponse : IResponse
+        internal static async Task<TResponse> Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request, string gatewayUrl = null) where TResponse : IResponse
         {
             AddMerchant(merchant, request, gatewayUrl);
 
@@ -25,15 +25,7 @@ namespace PaySharp.Qpay
                 cert = new X509Certificate2(merchant.SslCertPath, merchant.SslCertPassword);
             }
 
-            string result = null;
-            Task.Run(async () =>
-            {
-                result = await HttpUtil
-                 .PostAsync(request.RequestUrl, request.GatewayData.ToXml(), cert);
-            })
-            .GetAwaiter()
-            .GetResult();
-
+            var result = await HttpUtil.PostAsync(request.RequestUrl, request.GatewayData.ToXml(), cert);
             BaseResponse baseResponse;
             if (!(request is BillDownloadRequest))
             {

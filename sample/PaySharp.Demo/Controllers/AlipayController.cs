@@ -22,7 +22,7 @@ namespace PaySharp.Demo.Controllers
         }
 
         [HttpPost]
-        public ActionResult WebPay(string out_trade_no, string subject, double total_amount, string body)
+        public async Task<ActionResult> WebPay(string out_trade_no, string subject, double total_amount, string body)
         {
             var request = new WebPayRequest();
             request.AddGatewayData(new WebPayModel()
@@ -33,12 +33,12 @@ namespace PaySharp.Demo.Controllers
                 OutTradeNo = out_trade_no
             });
 
-            var response = _gateway.Execute(request);
+            var response =await  _gateway.Execute(request);
             return Content(response.Html, "text/html", Encoding.UTF8);
         }
 
         [HttpPost]
-        public ActionResult WapPay(string out_trade_no, string subject, double total_amount, string body)
+        public async Task<ActionResult> WapPay(string out_trade_no, string subject, double total_amount, string body)
         {
             var request = new WapPayRequest();
             request.AddGatewayData(new WapPayModel()
@@ -49,12 +49,12 @@ namespace PaySharp.Demo.Controllers
                 OutTradeNo = out_trade_no
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Redirect(response.Url);
         }
 
         [HttpPost]
-        public ActionResult AppPay(string out_trade_no, string subject, double total_amount, string body)
+        public async Task<ActionResult> AppPay(string out_trade_no, string subject, double total_amount, string body)
         {
             var request = new AppPayRequest();
             request.AddGatewayData(new AppPayModel()
@@ -65,12 +65,12 @@ namespace PaySharp.Demo.Controllers
                 OutTradeNo = out_trade_no
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult ScanPay(string out_trade_no, string subject, double total_amount, string body)
+        public async Task<ActionResult> ScanPay(string out_trade_no, string subject, double total_amount, string body)
         {
             var request = new ScanPayRequest();
             request.AddGatewayData(new ScanPayModel()
@@ -81,13 +81,13 @@ namespace PaySharp.Demo.Controllers
                 OutTradeNo = out_trade_no
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
 
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult BarcodePay(string out_trade_no, string auth_code, string subject, double total_amount, string body)
+        public async Task<ActionResult> BarcodePay(string out_trade_no, string auth_code, string subject, double total_amount, string body)
         {
             var request = new BarcodePayRequest();
             request.AddGatewayData(new BarcodePayModel()
@@ -101,7 +101,7 @@ namespace PaySharp.Demo.Controllers
             request.PaySucceed += BarcodePay_PaySucceed;
             request.PayFailed += BarcodePay_PayFaild;
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
 
             return Json(response);
         }
@@ -139,7 +139,7 @@ namespace PaySharp.Demo.Controllers
         }
 
         [HttpPost]
-        public ActionResult Refund(string out_trade_no, string trade_no, double refund_amount, string refund_reason, string out_request_no)
+        public async Task<ActionResult> Refund(string out_trade_no, string trade_no, double refund_amount, string refund_reason, string out_request_no)
         {
             var request = new RefundRequest();
             request.AddGatewayData(new RefundModel()
@@ -151,12 +151,12 @@ namespace PaySharp.Demo.Controllers
                 OutRefundNo = out_request_no
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult RefundQuery(string out_trade_no, string trade_no, string out_request_no)
+        public async Task<ActionResult> RefundQuery(string out_trade_no, string trade_no, string out_request_no)
         {
             var request = new RefundQueryRequest();
             request.AddGatewayData(new RefundQueryModel()
@@ -166,12 +166,12 @@ namespace PaySharp.Demo.Controllers
                 OutRefundNo = out_request_no
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult Cancel(string out_trade_no, string trade_no)
+        public async Task<ActionResult> Cancel(string out_trade_no, string trade_no)
         {
             var request = new CancelRequest();
             request.AddGatewayData(new CancelModel()
@@ -180,12 +180,12 @@ namespace PaySharp.Demo.Controllers
                 OutTradeNo = out_trade_no
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult Close(string out_trade_no, string trade_no)
+        public async Task<ActionResult> Close(string out_trade_no, string trade_no)
         {
             var request = new CloseRequest();
             request.AddGatewayData(new CloseModel()
@@ -194,12 +194,12 @@ namespace PaySharp.Demo.Controllers
                 OutTradeNo = out_trade_no
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult Transfer(string out_trade_no, string payee_account, string payee_type, double amount, string remark)
+        public async Task<ActionResult> Transfer(string out_trade_no, string payee_account, string payee_type, double amount, string remark)
         {
             var request = new TransferRequest();
             request.AddGatewayData(new TransferModel()
@@ -211,12 +211,12 @@ namespace PaySharp.Demo.Controllers
                 PayeeType = payee_type
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult TransferQuery(string out_trade_no, string trade_no)
+        public async Task<ActionResult> TransferQuery(string out_trade_no, string trade_no)
         {
             var request = new TransferQueryRequest();
             request.AddGatewayData(new TransferQueryModel()
@@ -225,7 +225,7 @@ namespace PaySharp.Demo.Controllers
                 OutTradeNo = out_trade_no
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Json(response);
         }
 
@@ -239,7 +239,7 @@ namespace PaySharp.Demo.Controllers
                 BillType = bill_type
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return File(await response.GetBillFileAsync(), "application/zip");
         }
     }

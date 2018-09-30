@@ -3,6 +3,7 @@ using PaySharp.Core.Request;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace PaySharp.Alipay.Response
 {
@@ -78,7 +79,7 @@ namespace PaySharp.Alipay.Response
         [JsonProperty("present_refund_mdiscount_amount")]
         public double RefundMdiscountAmount { get; set; }
 
-        internal override void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
+        internal override async Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
         {
         }
     }

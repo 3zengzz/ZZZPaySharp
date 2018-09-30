@@ -2,6 +2,7 @@
 using PaySharp.Core.Response;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace PaySharp.Alipay.Response
 {
@@ -44,6 +45,6 @@ namespace PaySharp.Alipay.Response
         /// </summary>
         public string Raw { get; set; }
 
-        internal abstract void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request) where TResponse : IResponse;
+        internal abstract Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request) where TResponse : IResponse;
     }
 }

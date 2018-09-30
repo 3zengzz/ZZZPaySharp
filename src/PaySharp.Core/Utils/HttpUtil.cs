@@ -238,17 +238,14 @@ namespace PaySharp.Core.Utils
         /// 输出内容
         /// </summary>
         /// <param name="text">内容</param>
-        public static void Write(string text)
+        public static async Task  Write(string text)
         {
             Current.Response.ContentType = "text/plain;charset=utf-8";
 
 #if NETSTANDARD2_0
-            Task.Run(async () =>
-            {
+         
                 await Current.Response.WriteAsync(text);
-            })
-            .GetAwaiter()
-            .GetResult();
+          
 #else
             Current.Response.Write(text);
             Current.Response.End();
@@ -260,7 +257,7 @@ namespace PaySharp.Core.Utils
         /// 输出文件
         /// </summary>
         /// <param name="stream">文件流</param>
-        public static void Write(FileStream stream)
+        public static async Task Write(FileStream stream)
         {
             long size = stream.Length;
             byte[] buffer = new byte[size];
@@ -273,12 +270,8 @@ namespace PaySharp.Core.Utils
             Current.Response.Headers.Add("Content-Length", size.ToString());
 
 #if NETSTANDARD2_0
-            Task.Run(async () =>
-            {
-                await Current.Response.Body.WriteAsync(buffer, 0, (int)size);
-            })
-            .GetAwaiter()
-            .GetResult();
+           
+            await Current.Response.Body.WriteAsync(buffer, 0, (int)size);        
             Current.Response.Body.Close();
 #else
             Current.Response.BinaryWrite(buffer);

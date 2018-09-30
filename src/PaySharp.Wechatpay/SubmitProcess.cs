@@ -15,7 +15,7 @@ namespace PaySharp.Wechatpay
     {
         private static string _gatewayUrl;
 
-        internal static TResponse Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request, string gatewayUrl = null) where TResponse : IResponse
+        internal static async Task<TResponse> Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request, string gatewayUrl = null) where TResponse : IResponse
         {
             AddMerchant(merchant, request, gatewayUrl);
 
@@ -25,7 +25,7 @@ namespace PaySharp.Wechatpay
             X509Certificate2 cert = null;
             if (((BaseRequest<TModel, TResponse>)request).IsUseCert)
             {
-                if(merchant.SslCertContent!=null && merchant.SslCertContent.Length > 0)  //使用二进制数组字节流
+                if (merchant.SslCertContent != null && merchant.SslCertContent.Length > 0)  //使用二进制数组字节流
                 {
                     cert = new X509Certificate2(merchant.SslCertContent, merchant.SslCertPassword);
                 }
@@ -35,14 +35,7 @@ namespace PaySharp.Wechatpay
                 }
             }
 
-            string result = null;
-            Task.Run(async () =>
-            {
-                result = await HttpUtil
-                 .PostAsync(request.RequestUrl, request.GatewayData.ToXml(), cert);
-            })
-            .GetAwaiter()
-            .GetResult();
+            var result = await HttpUtil.PostAsync(request.RequestUrl, request.GatewayData.ToXml(), cert);
 
             BaseResponse baseResponse;
             if (!(request is BillDownloadRequest || request is FundFlowDownloadRequest))
@@ -76,19 +69,10 @@ namespace PaySharp.Wechatpay
             return (TResponse)(object)baseResponse;
         }
 
-        internal static TResponse AuthExecute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request, string gatewayUrl = null) where TResponse : IResponse
+        internal static async Task<TResponse> AuthExecute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request, string gatewayUrl = null) where TResponse : IResponse
         {
             AddMerchant(merchant, request, gatewayUrl);
-
-            string result = null;
-            Task.Run(async () =>
-            {
-                result = await HttpUtil
-                 .GetAsync($"{request.RequestUrl}?{request.GatewayData.ToUrl()}");
-            })
-            .GetAwaiter()
-            .GetResult();
-
+            var result = await HttpUtil.GetAsync($"{request.RequestUrl}?{request.GatewayData.ToUrl()}");
             var gatewayData = new GatewayData();
             gatewayData.FromJson(result);
 

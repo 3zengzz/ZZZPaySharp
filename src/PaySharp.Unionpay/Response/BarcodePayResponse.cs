@@ -61,7 +61,7 @@ namespace PaySharp.Unionpay.Response
         /// <param name="pollTime">轮询间隔</param>
         /// <param name="pollCount">轮询次数</param>
         /// <returns></returns>
-        private QueryResponse PollQueryTradeState(string outTradeNo, int pollTime, int pollCount)
+        private async Task<QueryResponse> PollQueryTradeState(string outTradeNo, int pollTime, int pollCount)
         {
             for (int i = 0; i < pollCount; i++)
             {
@@ -70,7 +70,7 @@ namespace PaySharp.Unionpay.Response
                 {
                     OrderId = outTradeNo
                 });
-                var queryResponse = SubmitProcess.Execute(_merchant, queryRequest);
+                var queryResponse = await SubmitProcess.Execute(_merchant, queryRequest);
                 if (queryResponse.RespCode == "00")
                 {
                     return queryResponse;
@@ -85,7 +85,7 @@ namespace PaySharp.Unionpay.Response
             {
                 OrderId = outTradeNo
             });
-            SubmitProcess.Execute(_merchant, cancelRequest);
+            await SubmitProcess.Execute(_merchant, cancelRequest);
 
             return null;
         }

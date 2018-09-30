@@ -88,7 +88,7 @@ namespace PaySharp.Unionpay
             return false;
         }
 
-        public override TResponse Execute<TModel, TResponse>(Request<TModel, TResponse> request)
+        public override Task<TResponse> Execute<TModel, TResponse>(Request<TModel, TResponse> request)
         {
             if (request is WebPayRequest || request is WapPayRequest)
             {
@@ -98,7 +98,7 @@ namespace PaySharp.Unionpay
             return SubmitProcess.Execute(_merchant, request, GatewayUrl);
         }
 
-        protected override void WriteFailureFlag()
+        protected override async Task WriteFailureFlag()
         {
             HttpUtil.Current.Response.StatusCode = 404;
         }

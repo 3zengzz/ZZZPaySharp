@@ -24,7 +24,7 @@ namespace PaySharp.Core
             return await Task.Run(() => { return false; });
         }
 
-        public override TResponse Execute<TModel, TResponse>(Request<TModel, TResponse> request)
+        public override Task<TResponse> Execute<TModel, TResponse>(Request<TModel, TResponse> request)
         {
             throw new NotImplementedException();
         }

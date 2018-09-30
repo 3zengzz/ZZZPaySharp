@@ -9,6 +9,7 @@ using PaySharp.Unionpay;
 using PaySharp.Unionpay.Domain;
 using PaySharp.Unionpay.Request;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PaySharp.Demo.Controllers
 {
@@ -22,7 +23,7 @@ namespace PaySharp.Demo.Controllers
         }
 
         [HttpPost]
-        public ActionResult WebPay(string order_id, int total_amount)
+        public async Task<ActionResult> WebPay(string order_id, int total_amount)
         {
             var request = new WebPayRequest();
             request.AddGatewayData(new WebPayModel()
@@ -31,12 +32,12 @@ namespace PaySharp.Demo.Controllers
                 OrderId = order_id
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Content(response.Html, "text/html", Encoding.UTF8);
         }
 
         [HttpPost]
-        public ActionResult WapPay(string order_id, int total_amount)
+        public async Task<ActionResult> WapPay(string order_id, int total_amount)
         {
             var request = new WapPayRequest();
             request.AddGatewayData(new WapPayModel()
@@ -45,12 +46,12 @@ namespace PaySharp.Demo.Controllers
                 OrderId = order_id
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Content(response.Html, "text/html", Encoding.UTF8);
         }
 
         [HttpPost]
-        public ActionResult AppPay(string order_id, int total_amount, string body)
+        public async Task<ActionResult> AppPay(string order_id, int total_amount, string body)
         {
             var request = new AppPayRequest();
             request.AddGatewayData(new AppPayModel()
@@ -60,12 +61,12 @@ namespace PaySharp.Demo.Controllers
                 OrderId = order_id
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult ScanPay(string order_id, int total_amount)
+        public async Task<ActionResult> ScanPay(string order_id, int total_amount)
         {
             var request = new ScanPayRequest();
             request.AddGatewayData(new ScanPayModel()
@@ -74,13 +75,13 @@ namespace PaySharp.Demo.Controllers
                 OrderId = order_id
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
 
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult BarcodePay(string order_id, string qr_no, int total_amount)
+        public async Task<ActionResult> BarcodePay(string order_id, string qr_no, int total_amount)
         {
             var request = new BarcodePayRequest();
             request.AddGatewayData(new BarcodePayModel()
@@ -92,7 +93,7 @@ namespace PaySharp.Demo.Controllers
             request.PaySucceed += BarcodePay_PaySucceed;
             request.PayFailed += BarcodePay_PayFaild;
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
 
             return Json(response);
         }
@@ -116,7 +117,7 @@ namespace PaySharp.Demo.Controllers
         }
 
         [HttpPost]
-        public ActionResult Query(string order_id, string query_id)
+        public async Task<ActionResult> Query(string order_id, string query_id)
         {
             var request = new QueryRequest();
             request.AddGatewayData(new QueryModel()
@@ -125,12 +126,12 @@ namespace PaySharp.Demo.Controllers
                 QueryId = query_id
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult Refund(string order_id, int refund_amount, string orig_qry_id, string orig_order_id)
+        public async Task<ActionResult> Refund(string order_id, int refund_amount, string orig_qry_id, string orig_order_id)
         {
             var request = new RefundRequest();
             request.AddGatewayData(new RefundModel()
@@ -141,12 +142,12 @@ namespace PaySharp.Demo.Controllers
                 OrigQryId = orig_qry_id
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult Cancel(string order_id, int cancel_amount, string orig_qry_id, string orig_order_id)
+        public async Task<ActionResult> Cancel(string order_id, int cancel_amount, string orig_qry_id, string orig_order_id)
         {
             var request = new CancelRequest();
             request.AddGatewayData(new CancelModel()
@@ -157,12 +158,12 @@ namespace PaySharp.Demo.Controllers
                 OrigQryId = orig_qry_id
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return Json(response);
         }
 
         [HttpPost]
-        public ActionResult BillDownload(string bill_date)
+        public async Task<ActionResult> BillDownload(string bill_date)
         {
             var request = new BillDownloadRequest();
             request.AddGatewayData(new BillDownloadModel()
@@ -170,7 +171,7 @@ namespace PaySharp.Demo.Controllers
                 BillDate = bill_date
             });
 
-            var response = _gateway.Execute(request);
+            var response =await _gateway.Execute(request);
             return File(response.GetBillFile(), "application/zip");
         }
     }

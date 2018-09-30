@@ -85,17 +85,17 @@ namespace PaySharp.Core
         /// <summary>
         /// 当接收到支付网关通知并验证无误时按照支付网关要求格式输出表示成功接收到网关通知的字符串
         /// </summary>
-        protected internal virtual void WriteSuccessFlag()
+        protected internal virtual  Task WriteSuccessFlag()
         {
-            HttpUtil.Write("success");
+            return HttpUtil.Write("success");
         }
 
         /// <summary>
         /// 当接收到支付网关通知并验证有误时按照支付网关要求格式输出表示失败接收到网关通知的字符串
         /// </summary>
-        protected internal virtual void WriteFailureFlag()
+        protected internal virtual  Task WriteFailureFlag()
         {
-            HttpUtil.Write("failure");
+           return HttpUtil.Write("failure");
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace PaySharp.Core
         /// <typeparam name="TResponse">返回模型</typeparam>
         /// <param name="request">请求</param>
         /// <returns></returns>
-        public abstract TResponse Execute<TModel, TResponse>(Request<TModel, TResponse> request) where TResponse : IResponse;
+        public abstract Task<TResponse> Execute<TModel, TResponse>(Request<TModel, TResponse> request) where TResponse : IResponse;
 
         #endregion
     }

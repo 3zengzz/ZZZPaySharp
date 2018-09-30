@@ -56,7 +56,7 @@ namespace PaySharp.Qpay.Response
         /// <param name="pollTime">轮询间隔</param>
         /// <param name="pollCount">轮询次数</param>
         /// <returns></returns>
-        private QueryResponse PollQueryTradeState(string outTradeNo, int pollTime, int pollCount)
+        private async Task<QueryResponse> PollQueryTradeState(string outTradeNo, int pollTime, int pollCount)
         {
             for (int i = 0; i < pollCount; i++)
             {
@@ -65,12 +65,11 @@ namespace PaySharp.Qpay.Response
                 {
                     OutTradeNo = outTradeNo
                 });
-                var queryResponse = SubmitProcess.Execute(_merchant, queryRequest);
+                var queryResponse =await  SubmitProcess.Execute(_merchant, queryRequest);
                 if (queryResponse.TradeState == "SUCCESS")
                 {
                     return queryResponse;
                 }
-
                 Thread.Sleep(pollTime);
             }
 
@@ -80,7 +79,7 @@ namespace PaySharp.Qpay.Response
             {
                 OutTradeNo = outTradeNo
             });
-            SubmitProcess.Execute(_merchant, cancelRequest);
+            await SubmitProcess.Execute(_merchant, cancelRequest);
 
             return null;
         }

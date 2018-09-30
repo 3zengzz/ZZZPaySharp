@@ -87,7 +87,7 @@ namespace PaySharp.Alipay
             throw new GatewayException("签名不一致");
         }
 
-        public override TResponse Execute<TModel, TResponse>(Request<TModel, TResponse> request)
+        public override Task<TResponse> Execute<TModel, TResponse>(Request<TModel, TResponse> request)
         {
             if (request is WapPayRequest || request is WebPayRequest || request is AppPayRequest)
             {

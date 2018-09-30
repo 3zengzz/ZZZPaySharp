@@ -39,7 +39,7 @@ namespace PaySharp.Alipay.Response
             return _billFile;
         }
 
-        internal override void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
+        internal override async Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
         {
         }
     }

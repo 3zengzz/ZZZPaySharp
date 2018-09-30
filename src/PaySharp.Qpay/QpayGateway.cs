@@ -84,21 +84,21 @@ namespace PaySharp.Qpay
             return true;
         }
 
-        protected override void WriteSuccessFlag()
+        protected override Task WriteSuccessFlag()
         {
             GatewayData.Clear();
             GatewayData.Add("return_code", "SUCCESS");
-            HttpUtil.Write(GatewayData.ToXml());
+            return HttpUtil.Write(GatewayData.ToXml());
         }
 
-        protected override void WriteFailureFlag()
+        protected override Task WriteFailureFlag()
         {
             GatewayData.Clear();
             GatewayData.Add("return_code", "FAIL");
-            HttpUtil.Write(GatewayData.ToXml());
+            return HttpUtil.Write(GatewayData.ToXml());
         }
 
-        public override TResponse Execute<TModel, TResponse>(Request<TModel, TResponse> request)
+        public override Task<TResponse> Execute<TModel, TResponse>(Request<TModel, TResponse> request)
         {
             return SubmitProcess.Execute(_merchant, request, GatewayUrl);
         }
