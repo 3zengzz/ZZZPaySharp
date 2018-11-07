@@ -96,7 +96,8 @@ namespace PaySharp.Demo.Controllers
                 TotalAmount = total_amount,
                 Subject = subject,
                 OutTradeNo = out_trade_no,
-                AuthCode = auth_code
+                AuthCode = auth_code,
+                TimeoutExpress="90m"
             });
             var response =await _gateway.Execute(request);
 
