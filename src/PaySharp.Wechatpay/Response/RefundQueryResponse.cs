@@ -2,6 +2,7 @@
 using PaySharp.Core.Request;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using static PaySharp.Wechatpay.Response.RefundResponse;
 
 namespace PaySharp.Wechatpay.Response
@@ -62,7 +63,7 @@ namespace PaySharp.Wechatpay.Response
         /// </summary>
         public List<RefundResponse> Refunds { get; set; }
 
-        internal override void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
+        internal override async Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
         {
             Refunds = ConvertUtil.ToList<RefundResponse, RefundCouponResponse>(GatewayData, -1);
         }

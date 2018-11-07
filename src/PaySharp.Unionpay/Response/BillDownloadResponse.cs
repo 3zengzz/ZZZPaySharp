@@ -1,5 +1,6 @@
 ﻿using PaySharp.Core;
 using PaySharp.Core.Request;
+using System.Threading.Tasks;
 
 namespace PaySharp.Unionpay.Response
 {
@@ -36,11 +37,11 @@ namespace PaySharp.Unionpay.Response
 
         private byte[] _billFile;
 
-        internal override void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
+        internal override async Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
         {
             if (!string.IsNullOrEmpty(FileContent))
             {
-                _billFile = Util.Inflater(FileContent);
+                _billFile = await Util.Inflater(FileContent);
             }
         }
     }

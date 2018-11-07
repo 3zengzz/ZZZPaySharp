@@ -56,14 +56,14 @@ namespace PaySharp.Wechatpay
                     }
 
                     baseResponse.Sign = sign;
-                    baseResponse.Execute(merchant, request);
+                    await baseResponse.Execute(merchant, request);
                 }
             }
             else
             {
                 baseResponse = (BaseResponse)Activator.CreateInstance(typeof(TResponse));
                 baseResponse.Raw = result;
-                baseResponse.Execute(merchant, request);
+                await baseResponse.Execute(merchant, request);
             }
 
             return (TResponse)(object)baseResponse;

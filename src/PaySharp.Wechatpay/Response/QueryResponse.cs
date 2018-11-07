@@ -1,6 +1,7 @@
 ﻿using PaySharp.Core;
 using PaySharp.Core.Request;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace PaySharp.Wechatpay.Response
 {
@@ -121,7 +122,7 @@ namespace PaySharp.Wechatpay.Response
         /// </summary>
         public List<CouponResponse> Coupons { get; set; }
 
-        internal override void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
+        internal override async Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
         {
             Coupons = ConvertUtil.ToList<CouponResponse, object>(GatewayData, -1);
         }

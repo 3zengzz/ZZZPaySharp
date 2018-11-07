@@ -157,7 +157,6 @@ namespace PaySharp.Alipay.Response
 
             if (Code == "10000")
             {
-                barcodePayRequest.OnPaySucceed(this, null);
                 return;
             }
 
@@ -166,17 +165,16 @@ namespace PaySharp.Alipay.Response
                 var queryResponse = await PollQueryTradeStateAsync(TradeNo, barcodePayRequest.PollTime, barcodePayRequest.PollCount);
                 if (queryResponse != null)
                 {
-                    barcodePayRequest.OnPaySucceed(queryResponse, null);
-                    return;
+                    Code = queryResponse.Code; 
                 }
                 else
                 {
-                    barcodePayRequest.OnPayFailed(this, "支付超时");
-                    return;
+                    SubMessage = "支付超时";
                 }
+                return;
             }
 
-            barcodePayRequest.OnPayFailed(this, SubMessage);
+            throw new Exception(SubMessage);
         }
 
         /// <summary>
@@ -222,9 +220,9 @@ namespace PaySharp.Alipay.Response
         /// <param name="pollTime">轮询间隔</param>
         /// <param name="pollCount">轮询次数</param>
         /// <returns></returns>
-        private async Task<QueryResponse> PollQueryTradeStateAsync(string tradeNo, int pollTime, int pollCount)
+        private Task<QueryResponse> PollQueryTradeStateAsync(string tradeNo, int pollTime, int pollCount)
         {
-            return await Task.Run(() => PollQueryTradeState(tradeNo, pollTime, pollCount));
+            return PollQueryTradeState(tradeNo, pollTime, pollCount);
         }
     }
 }

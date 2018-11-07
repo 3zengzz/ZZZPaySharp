@@ -1,5 +1,6 @@
 ﻿using PaySharp.Core.Request;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PaySharp.Wechatpay.Response
 {
@@ -15,7 +16,7 @@ namespace PaySharp.Wechatpay.Response
 
         private byte[] _billFile;
 
-        internal override void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
+        internal override async Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
         {
             if (!string.IsNullOrEmpty(Raw))
             {

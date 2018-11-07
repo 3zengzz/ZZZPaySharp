@@ -1,6 +1,7 @@
 ﻿using PaySharp.Core;
 using PaySharp.Core.Request;
 using PaySharp.Core.Response;
+using System.Threading.Tasks;
 
 namespace PaySharp.Unionpay.Response
 {
@@ -187,6 +188,6 @@ namespace PaySharp.Unionpay.Response
         /// </summary>
         public string Raw { get; set; }
 
-        internal abstract void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request) where TResponse : IResponse;
+        internal abstract Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request) where TResponse : IResponse;
     }
 }

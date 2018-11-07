@@ -99,10 +99,7 @@ namespace PaySharp.UnitTest
                 Subject = "支付宝条码支付测试",
                 OutTradeNo = _outTradeNo,
                 AuthCode = "123"
-            });
-            request.PaySucceed += BarcodePay_PaySucceed;
-            request.PayFailed += BarcodePay_PayFaild;
-
+            });           
             var response = await _alipayGateway.Execute(request);
             Assert.Equal("40004", response.Code);
         }

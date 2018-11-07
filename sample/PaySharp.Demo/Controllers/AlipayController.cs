@@ -98,30 +98,9 @@ namespace PaySharp.Demo.Controllers
                 OutTradeNo = out_trade_no,
                 AuthCode = auth_code
             });
-            request.PaySucceed += BarcodePay_PaySucceed;
-            request.PayFailed += BarcodePay_PayFaild;
-
             var response =await _gateway.Execute(request);
 
             return Json(response);
-        }
-
-        /// <summary>
-        /// 支付成功事件
-        /// </summary>
-        /// <param name="response">返回结果</param>
-        /// <param name="message">提示信息</param>
-        private void BarcodePay_PaySucceed(IResponse response, string message)
-        {
-        }
-
-        /// <summary>
-        /// 支付失败事件
-        /// </summary>
-        /// <param name="response">返回结果,可能是BarcodePayResponse/QueryResponse</param>
-        /// <param name="message">提示信息</param>
-        private void BarcodePay_PayFaild(IResponse response, string message)
-        {
         }
 
         [HttpPost]

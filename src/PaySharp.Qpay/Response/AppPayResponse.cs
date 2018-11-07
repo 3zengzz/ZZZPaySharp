@@ -2,6 +2,7 @@
 using PaySharp.Core.Request;
 using PaySharp.Core.Utils;
 using System;
+using System.Threading.Tasks;
 
 namespace PaySharp.Qpay.Response
 {
@@ -22,7 +23,7 @@ namespace PaySharp.Qpay.Response
         /// </summary>
         public string OrderInfo { get; set; }
 
-        internal override void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
+        internal override async Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
         {
             if (ResultCode == "SUCCESS")
             {

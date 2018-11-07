@@ -1,5 +1,6 @@
 ﻿using PaySharp.Core;
 using PaySharp.Core.Request;
+using System.Threading.Tasks;
 
 namespace PaySharp.Qpay.Response
 {
@@ -47,7 +48,7 @@ namespace PaySharp.Qpay.Response
         [ReName(Name = "total_fee")]
         public int TotalAmount { get; set; }
 
-        internal override void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
+        internal override async Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
         {
         }
     }

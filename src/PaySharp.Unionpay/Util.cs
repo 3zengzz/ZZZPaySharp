@@ -13,6 +13,7 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PaySharp.Unionpay
 {
@@ -397,7 +398,7 @@ namespace PaySharp.Unionpay
         /// </summary>
         /// <param name="data">数据</param>
         /// <returns></returns>
-        public static byte[] Inflater(string data)
+        public static async Task<byte[]> Inflater(string data)
         {
             byte[] temp = new byte[1024];
             MemoryStream memory = new MemoryStream();
@@ -408,7 +409,7 @@ namespace PaySharp.Unionpay
                 int extracted = inf.Inflate(temp);
                 if (extracted > 0)
                 {
-                    memory.Write(temp, 0, extracted);
+                    await memory.WriteAsync(temp, 0, extracted);
                 }
                 else
                 {

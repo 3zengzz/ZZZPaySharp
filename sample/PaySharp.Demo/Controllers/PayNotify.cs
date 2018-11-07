@@ -18,7 +18,7 @@ namespace PaySharp.Demo.Controllers
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public async Task<bool> OnPaySucceed(PaySucceedEventArgs args)
+        public Task<bool> OnPaySucceed(PaySucceedEventArgs args)
         {
             // 支付成功时时的处理代码
             /* 建议添加以下校验。
@@ -37,7 +37,7 @@ namespace PaySharp.Demo.Controllers
             }
 
             //处理成功返回true
-            return true;
+            return Task.FromResult(true);
         }
 
         /// <summary>

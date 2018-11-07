@@ -2,6 +2,7 @@
 using PaySharp.Core.Request;
 using PaySharp.Wechatpay.Domain;
 using PaySharp.Wechatpay.Request;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -102,43 +103,36 @@ namespace PaySharp.Wechatpay.Response
 
         private Merchant _merchant;
 
-        internal override void Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
+        internal override async Task Execute<TModel, TResponse>(Merchant merchant, Request<TModel, TResponse> request)
         {
             _merchant = merchant;
             var barcodePayRequest = request as BarcodePayRequest;
 
             if (ResultCode == "SUCCESS")
-            {
-                barcodePayRequest.OnPaySucceed(this, null);
+            {             
                 return;
             }
 
             if (ErrCode == "USERPAYING")
             {
-                var queryResponse = new QueryResponse();
-                Task.Run(async () =>
-                {
-                    queryResponse = await PollQueryTradeStateAsync(
+                var queryResponse = await PollQueryTradeStateAsync(
                         barcodePayRequest.Model.OutTradeNo,
                         barcodePayRequest.PollTime,
                         barcodePayRequest.PollCount);
-                })
-                .GetAwaiter()
-                .GetResult();
 
                 if (queryResponse != null)
                 {
-                    barcodePayRequest.OnPaySucceed(queryResponse, null);
+                    ResultCode = queryResponse.ResultCode;
                     return;
                 }
                 else
                 {
-                    barcodePayRequest.OnPayFailed(this, "支付超时");
+                    ErrCodeDes = "支付超时";
                     return;
                 }
             }
 
-            barcodePayRequest.OnPayFailed(this, ErrCodeDes);
+            throw new Exception(ErrCodeDes);
         }
 
         /// <summary>
@@ -184,9 +178,9 @@ namespace PaySharp.Wechatpay.Response
         /// <param name="pollTime">轮询间隔</param>
         /// <param name="pollCount">轮询次数</param>
         /// <returns></returns>
-        private async Task<QueryResponse> PollQueryTradeStateAsync(string outTradeNo, int pollTime, int pollCount)
+        private Task<QueryResponse> PollQueryTradeStateAsync(string outTradeNo, int pollTime, int pollCount)
         {
-            return await Task.Run(() => PollQueryTradeState(outTradeNo, pollTime, pollCount));
+            return PollQueryTradeState(outTradeNo, pollTime, pollCount);
         }
     }
 }

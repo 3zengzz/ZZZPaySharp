@@ -100,7 +100,7 @@ namespace PaySharp.Unionpay
 
         protected override async Task WriteFailureFlag()
         {
-            HttpUtil.Current.Response.StatusCode = 404;
+             HttpUtil.Current.Response.StatusCode = 404;
         }
     }
 }

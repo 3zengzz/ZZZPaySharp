@@ -19,8 +19,8 @@ namespace PaySharp.Alipay
         {
             AddMerchant(merchant, request, gatewayUrl);
 
-            string result = await HttpUtil.PostAsync(request.RequestUrl, request.GatewayData.ToUrl());           
-        
+            string result = await HttpUtil.PostAsync(request.RequestUrl, request.GatewayData.ToUrl());
+
             var jObject = JObject.Parse(result);
             var jToken = jObject.First.First;
             string sign = jObject.Value<string>("sign");
@@ -32,7 +32,7 @@ namespace PaySharp.Alipay
             var baseResponse = (BaseResponse)jToken.ToObject(typeof(TResponse));
             baseResponse.Raw = result;
             baseResponse.Sign = sign;
-            baseResponse.Execute(merchant, request);
+            await baseResponse.Execute(merchant, request);
             return (TResponse)(object)baseResponse;
         }
 
@@ -80,7 +80,6 @@ namespace PaySharp.Alipay
                 data = data.Replace("/", "\\/");
                 result = EncryptUtil.RSAVerifyData(data, sign, alipayPublicKey, signType);
             }
-
             return result;
         }
     }
