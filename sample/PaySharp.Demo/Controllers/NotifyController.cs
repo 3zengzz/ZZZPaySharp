@@ -20,14 +20,36 @@ namespace PaySharp.Demo.Controllers
             _payNotify = payNotify;
         }
 
-        public async Task Index()
+        /// <summary>
+        /// 异步回调
+        /// </summary>
+        /// <returns></returns>
+        public async Task AsyncNotify()
         {
             // 订阅支付通知事件
             Notify notify = new Notify(_gateways, _payNotify);
 
             // 接收并处理支付通知
-            await notify.ReceivedAsync();
+            await notify.ReceivedAsync(NotifyType.Async);
             
+            if (!string.IsNullOrEmpty(_payNotify.RedirectPath)) //同步回调跳转
+            {
+                Response.Redirect(_payNotify.RedirectPath);
+            }
+        }
+
+        /// <summary>
+        /// 同步回调
+        /// </summary>
+        /// <returns></returns>
+        public async Task SyncNotify()
+        {
+            // 订阅支付通知事件
+            Notify notify = new Notify(_gateways, _payNotify);
+
+            // 接收并处理支付通知
+            await notify.ReceivedAsync(NotifyType.Sync);
+
             if (!string.IsNullOrEmpty(_payNotify.RedirectPath)) //同步回调跳转
             {
                 Response.Redirect(_payNotify.RedirectPath);

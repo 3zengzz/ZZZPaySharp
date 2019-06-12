@@ -109,7 +109,7 @@ namespace PaySharp.Wechatpay.Response
             var barcodePayRequest = request as BarcodePayRequest;
 
             if (ResultCode == "SUCCESS")
-            {             
+            {
                 return;
             }
 
@@ -123,16 +123,16 @@ namespace PaySharp.Wechatpay.Response
                 if (queryResponse != null)
                 {
                     ResultCode = queryResponse.ResultCode;
+                    TradeNo = queryResponse.TradeNo;
+                    TotalAmount = queryResponse.TotalAmount;
                     return;
                 }
-                else
-                {
-                    ErrCodeDes = "支付超时";
-                    return;
-                }
+                ResultCode = "REVOKED";
+                ErrCodeDes = "支付超时";
+                return;
+
             }
 
-            throw new Exception(ErrCodeDes);
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace PaySharp.Wechatpay.Response
                     return queryResponse;
                 }
 
-                Thread.Sleep(pollTime);
+                await Task.Delay(pollTime);
             }
 
             //支付超时，取消订单

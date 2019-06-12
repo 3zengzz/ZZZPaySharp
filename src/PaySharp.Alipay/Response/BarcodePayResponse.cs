@@ -165,16 +165,16 @@ namespace PaySharp.Alipay.Response
                 var queryResponse = await PollQueryTradeStateAsync(TradeNo, barcodePayRequest.PollTime, barcodePayRequest.PollCount);
                 if (queryResponse != null)
                 {
-                    Code = queryResponse.Code; 
+                    Code = queryResponse.Code;
+                    TradeNo = queryResponse.TradeNo;
+                    TotalAmount = queryResponse.ReceiptAmount;
+                    return;
                 }
-                else
-                {
-                    SubMessage = "支付超时";
-                }
+
+                Code = "-10";
+                SubMessage = "支付超时";
                 return;
             }
-
-            throw new Exception(SubMessage);
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace PaySharp.Alipay.Response
                     return queryResponse;
                 }
 
-                Thread.Sleep(pollTime);
+                await Task.Delay(pollTime);
             }
 
             //支付超时，取消订单

@@ -31,7 +31,7 @@ namespace PaySharp.Core
         /// <summary>
         /// 接收并验证网关的支付通知
         /// </summary>
-        public async Task ReceivedAsync()
+        public async Task ReceivedAsync(NotifyType notifyType)
         {
             var gateway = NotifyProcess.GetGateway(_gateways);
             if (gateway is NullGateway)
@@ -52,9 +52,9 @@ namespace PaySharp.Core
                     return;
                 }
 
-                if (HttpUtil.RequestType == "GET")
+                if (notifyType == NotifyType.Sync) //是否是同步回调
                 {
-                    await _payNotify.OnPaySucceed(new PaySucceedEventArgs(gateway));
+                    await _payNotify.OnReturnNotify(new ReturnEventArgs(gateway));
                     return;
                 }
 

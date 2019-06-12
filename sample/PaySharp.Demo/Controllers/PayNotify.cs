@@ -42,9 +42,7 @@ namespace PaySharp.Demo.Controllers
 
         /// <summary>
         /// 取消订单处理
-        /// </summary>
-        /// <param name="args"></param>
-        /// <returns></returns>
+        /// </summary>       
         public Task<bool> OnCancelSucceed(CancelSucceedEventArgs args)
         {
             throw new NotImplementedException();
@@ -52,9 +50,7 @@ namespace PaySharp.Demo.Controllers
 
         /// <summary>
         /// 成功退款处理
-        /// </summary>
-        /// <param name="args"></param>
-        /// <returns></returns>
+        /// </summary>   
         public Task<bool> OnRefundSucceed(RefundSucceedEventArgs args)
         {
             throw new NotImplementedException();
@@ -62,9 +58,7 @@ namespace PaySharp.Demo.Controllers
 
         /// <summary>
         /// 未知网关处理
-        /// </summary>
-        /// <param name="args"></param>
-        /// <returns></returns>
+        /// </summary>      
         public Task OnUnknownGateway(UnknownGatewayEventArgs args)
         {
             throw new NotImplementedException();
@@ -72,10 +66,16 @@ namespace PaySharp.Demo.Controllers
 
         /// <summary>
         /// 未知回调处理
-        /// </summary>
-        /// <param name="args"></param>
-        /// <returns></returns>
+        /// </summary>       
         public Task<bool> OnUnknownNotify(UnKnownNotifyEventArgs args)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 同步回调处理
+        /// </summary>      
+        public Task<bool> OnReturnNotify(ReturnEventArgs e)
         {
             throw new NotImplementedException();
         }
