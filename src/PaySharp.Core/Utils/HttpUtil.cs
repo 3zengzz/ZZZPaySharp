@@ -1,9 +1,4 @@
-﻿#if NETSTANDARD2_0
-using Microsoft.AspNetCore.Http;
-#else
-using System.Collections.Specialized;
-using System.Web;
-#endif
+﻿using Microsoft.AspNetCore.Http;
 using System;
 using System.IO;
 using System.Net;
@@ -20,8 +15,6 @@ namespace PaySharp.Core.Utils
     public static class HttpUtil
     {
         #region 属性
-
-#if NETSTANDARD2_0
 
         private static IHttpContextAccessor _httpContextAccessor;
 
@@ -125,87 +118,6 @@ namespace PaySharp.Core.Utils
 
         #endregion
 
-#else
-
-        public static HttpContext Current => HttpContext.Current;
-
-        /// <summary>
-        /// 本地IP
-        /// </summary>
-        public static string LocalIpAddress
-        {
-            get
-            {
-                try
-                {
-                    var ip = Current.Request.UserHostAddress;
-                    var ipAddress = IPAddress.Parse(ip.Split(':')[0]);
-                    return IPAddress.IsLoopback(ipAddress) ?
-                           IPAddress.Loopback.ToString() :
-                           ipAddress.MapToIPv4().ToString();
-                }
-                catch
-                {
-                    return IPAddress.Loopback.ToString();
-                }
-            }
-        }
-
-        /// <summary>
-        /// 客户端IP
-        /// </summary>
-        public static string RemoteIpAddress
-        {
-            get
-            {
-                try
-                {
-                    var ip = Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"] ??
-                             Current.Request.ServerVariables["REMOTE_ADDR"];
-                    var ipAddress = IPAddress.Parse(ip.Split(':')[0]);
-                    return IPAddress.IsLoopback(ipAddress) ?
-                           IPAddress.Loopback.ToString() :
-                           ipAddress.MapToIPv4().ToString();
-                }
-                catch
-                {
-                    return IPAddress.Loopback.ToString();
-                }
-            }
-        }
-
-        /// <summary>
-        /// 请求类型
-        /// </summary>
-        public static string RequestType => Current.Request.HttpMethod;
-
-        /// <summary>
-        /// 表单
-        /// </summary>
-        public static NameValueCollection Form => Current.Request.Form;
-
-        /// <summary>
-        /// 请求体
-        /// </summary>
-        public static Stream Body
-        {
-            get
-            {
-                var inputStream = Current.Request.InputStream;
-                try
-                {
-                    if (inputStream.CanSeek)
-                    {
-                        inputStream.Position = 0;
-                    }
-                }
-                catch { }
-                return inputStream;
-            }
-        }
-
-#endif
-
         /// <summary>
         /// 用户代理
         /// </summary>
@@ -238,19 +150,10 @@ namespace PaySharp.Core.Utils
         /// 输出内容
         /// </summary>
         /// <param name="text">内容</param>
-        public static async Task  Write(string text)
+        public static async Task Write(string text)
         {
             Current.Response.ContentType = "text/plain;charset=utf-8";
-
-#if NETSTANDARD2_0
-         
-                await Current.Response.WriteAsync(text);
-          
-#else
-            Current.Response.Write(text);
-            Current.Response.End();
-#endif
-
+            await Current.Response.WriteAsync(text);
         }
 
         /// <summary>
@@ -269,15 +172,8 @@ namespace PaySharp.Core.Utils
             Current.Response.Headers.Add("Content-Disposition", "attachment;filename=" + WebUtility.UrlEncode(Path.GetFileName(stream.Name)));
             Current.Response.Headers.Add("Content-Length", size.ToString());
 
-#if NETSTANDARD2_0
-           
-            await Current.Response.Body.WriteAsync(buffer, 0, (int)size);        
+            await Current.Response.Body.WriteAsync(buffer, 0, (int)size);
             Current.Response.Body.Close();
-#else
-            Current.Response.BinaryWrite(buffer);
-            Current.Response.End();
-            Current.Response.Close();
-#endif
         }
 
         /// <summary>
@@ -291,7 +187,7 @@ namespace PaySharp.Core.Utils
             request.Method = "GET";
             request.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
 
-            using (WebResponse response =await request.GetResponseAsync())
+            using (WebResponse response = await request.GetResponseAsync())
             {
                 using (StreamReader reader = new StreamReader(response.GetResponseStream()))
                 {
@@ -336,7 +232,7 @@ namespace PaySharp.Core.Utils
                 request.ClientCertificates.Add(cert);
             }
 
-            using (Stream outStream =await request.GetRequestStreamAsync())
+            using (Stream outStream = await request.GetRequestStreamAsync())
             {
                 outStream.Write(dataByte, 0, dataByte.Length);
             }

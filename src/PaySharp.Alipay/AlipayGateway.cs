@@ -1,6 +1,4 @@
-﻿#if NETSTANDARD2_0
-using Microsoft.Extensions.Options;
-#endif
+﻿using Microsoft.Extensions.Options;
 using PaySharp.Alipay.Request;
 using PaySharp.Alipay.Response;
 using PaySharp.Core;
@@ -34,8 +32,6 @@ namespace PaySharp.Alipay
             _merchant = merchant;
         }
 
-#if NETSTANDARD2_0
-
         /// <summary>
         /// 初始化支付宝网关
         /// </summary>
@@ -44,8 +40,6 @@ namespace PaySharp.Alipay
             : this(merchant.Value)
         {
         }
-
-#endif
 
         #endregion
 

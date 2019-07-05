@@ -1,5 +1,4 @@
-﻿#if NETSTANDARD2_0
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using PaySharp.Core;
 using PaySharp.Wechatpay;
 using System;
@@ -42,5 +41,3 @@ namespace Microsoft.Extensions.DependencyInjection
         }
     }
 }
-
-#endif

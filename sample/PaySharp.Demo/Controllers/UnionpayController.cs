@@ -1,8 +1,4 @@
-﻿#if NETCOREAPP
-using Microsoft.AspNetCore.Mvc;
-#else
-using System.Web.Mvc;
-#endif
+﻿using Microsoft.AspNetCore.Mvc;
 using PaySharp.Core;
 using PaySharp.Core.Response;
 using PaySharp.Unionpay;

@@ -1,6 +1,4 @@
-﻿#if NETSTANDARD2_0
-using Microsoft.Extensions.Options;
-#endif
+﻿using Microsoft.Extensions.Options;
 using PaySharp.Core;
 using PaySharp.Core.Exceptions;
 using PaySharp.Core.Request;
@@ -35,8 +33,6 @@ namespace PaySharp.Wechatpay
             _merchant = merchant;
         }
 
-#if NETSTANDARD2_0
-
         /// <summary>
         /// 初始化微信支付网关
         /// </summary>
@@ -45,8 +41,6 @@ namespace PaySharp.Wechatpay
             : this(merchant.Value)
         {
         }
-
-#endif
 
         #endregion
 

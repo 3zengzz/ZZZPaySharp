@@ -3,11 +3,7 @@ using PaySharp.Alipay.Domain;
 using PaySharp.Alipay.Request;
 using PaySharp.Core;
 using PaySharp.Core.Response;
-#if NETCOREAPP
 using Microsoft.AspNetCore.Mvc;
-#else
-using System.Web.Mvc;
-#endif
 using System.Text;
 using System.Threading.Tasks;
 

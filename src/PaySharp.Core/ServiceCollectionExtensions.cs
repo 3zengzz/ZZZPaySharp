@@ -1,5 +1,4 @@
-﻿#if NETSTANDARD2_0
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using PaySharp.Core;
 using PaySharp.Core.Utils;
@@ -41,5 +40,3 @@ namespace Microsoft.Extensions.DependencyInjection
         }
     }
 }
-
-#endif

@@ -1,6 +1,4 @@
-﻿#if NETSTANDARD2_0
-using Microsoft.Extensions.Options;
-#endif
+﻿using Microsoft.Extensions.Options;
 using PaySharp.Core;
 using PaySharp.Core.Exceptions;
 using PaySharp.Core.Request;
@@ -33,8 +31,6 @@ namespace PaySharp.Qpay
             _merchant = merchant;
         }
 
-#if NETSTANDARD2_0
-
         /// <summary>
         /// 初始化QQ钱包网关
         /// </summary>
@@ -43,8 +39,6 @@ namespace PaySharp.Qpay
             : this(merchant.Value)
         {
         }
-
-#endif
 
         #endregion
 

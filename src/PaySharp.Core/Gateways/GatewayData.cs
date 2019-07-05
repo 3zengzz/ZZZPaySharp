@@ -1,6 +1,4 @@
-﻿#if NETSTANDARD2_0
-using Microsoft.AspNetCore.Http;
-#endif
+﻿using Microsoft.AspNetCore.Http;
 using PaySharp.Core.Utils;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -422,8 +420,6 @@ namespace PaySharp.Core
             }
         }
 
-#if NETSTANDARD2_0
-
         /// <summary>
         /// 将表单数据转换为网关数据
         /// </summary>
@@ -443,7 +439,6 @@ namespace PaySharp.Core
             }
             catch { }
         }
-#endif
 
         /// <summary>
         /// 将键值对转换为网关数据

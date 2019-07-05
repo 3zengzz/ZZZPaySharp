@@ -4,11 +4,7 @@ using PaySharp.Wechatpay;
 using PaySharp.Wechatpay.Domain;
 using PaySharp.Wechatpay.Request;
 using System.Threading.Tasks;
-#if NETCOREAPP
 using Microsoft.AspNetCore.Mvc;
-#else
-using System.Web.Mvc;
-#endif
 using System;
 
 namespace PaySharp.Demo.Controllers
