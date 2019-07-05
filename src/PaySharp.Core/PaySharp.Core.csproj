@@ -3,7 +3,7 @@
   <Import Project="../../packaging.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>net45;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <Title>PaySharp.Core</Title>
     <Description>支付核心</Description>
     <Version>1.0.6</Version>
@@ -11,12 +11,7 @@
     <PackageReleaseNotes>
     </PackageReleaseNotes>
   </PropertyGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
-    <Reference Include="System.Web" />
-    <Reference Include="System.Configuration" />
-  </ItemGroup>
-
+  
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="1.0.0" />
   </ItemGroup>

@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaySharp.Alipay", "src\PayS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaySharp.Core", "src\PaySharp.Core\PaySharp.Core.csproj", "{3E3BBE89-6C4A-476D-A227-BE77F2BE6C7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaySharp.Core.Mvc", "src\PaySharp.Core.Mvc\PaySharp.Core.Mvc.csproj", "{8D517C53-EC18-40C7-BF07-F400E172F3AA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaySharp.Wechatpay", "src\PaySharp.Wechatpay\PaySharp.Wechatpay.csproj", "{DC8772E4-9F01-4744-93A3-0A795117418C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaySharp.UnitTest", "test\PaySharp.UnitTest\PaySharp.UnitTest.csproj", "{B9DD57BE-96FC-4F78-99E9-99CEAD33CC5F}"
@@ -37,10 +35,6 @@ Global
 		{3E3BBE89-6C4A-476D-A227-BE77F2BE6C7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E3BBE89-6C4A-476D-A227-BE77F2BE6C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E3BBE89-6C4A-476D-A227-BE77F2BE6C7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8D517C53-EC18-40C7-BF07-F400E172F3AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D517C53-EC18-40C7-BF07-F400E172F3AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D517C53-EC18-40C7-BF07-F400E172F3AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D517C53-EC18-40C7-BF07-F400E172F3AA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DC8772E4-9F01-4744-93A3-0A795117418C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DC8772E4-9F01-4744-93A3-0A795117418C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC8772E4-9F01-4744-93A3-0A795117418C}.Release|Any CPU.ActiveCfg = Release|Any CPU
