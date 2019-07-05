@@ -2,6 +2,8 @@
 using System;
 using System.IO;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -181,29 +183,22 @@ namespace PaySharp.Core.Utils
         /// </summary>
         /// <param name="url">url</param>
         /// <returns></returns>
-        public static async Task<string> Get(string url)
-        {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "GET";
-            request.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
-
-            using (WebResponse response = await request.GetResponseAsync())
-            {
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                {
-                    return reader.ReadToEnd().Trim();
-                }
-            }
-        }
-
-        /// <summary>
-        /// 异步Get请求
-        /// </summary>
-        /// <param name="url">url</param>
-        /// <returns></returns>
         public static async Task<string> GetAsync(string url)
         {
-            return await Get(url);
+            //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            //request.Method = "GET";
+            //request.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
+
+            //using (WebResponse response = await request.GetResponseAsync())
+            //{
+            //    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            //    {
+            //        return reader.ReadToEnd().Trim();
+            //    }
+            //}
+            HttpClient client = HttpClientFactory.Create();
+            var data = await client.GetByteArrayAsync(url);
+            return Encoding.UTF8.GetString(data);
         }
 
         /// <summary>
@@ -215,34 +210,56 @@ namespace PaySharp.Core.Utils
         /// <returns></returns>
         public static async Task<string> Post(string url, string data, X509Certificate2 cert = null)
         {
+            #region 老版方法
+            //if (url.StartsWith("https", StringComparison.OrdinalIgnoreCase))
+            //{
+            //    ServicePointManager.ServerCertificateValidationCallback =
+            //            new RemoteCertificateValidationCallback(CheckValidationResult);
+            //}
+
+            //byte[] dataByte = Encoding.UTF8.GetBytes(data);
+            //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            //request.Method = "POST";
+            //request.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
+            //request.ContentLength = dataByte.Length;
+
+            //if (cert != null)
+            //{
+            //    request.ClientCertificates.Add(cert);
+            //}
+
+            //using (Stream outStream = await request.GetRequestStreamAsync())
+            //{
+            //    outStream.Write(dataByte, 0, dataByte.Length);
+            //}
+
+            //using (HttpWebResponse response = (HttpWebResponse)(await request.GetResponseAsync()))
+            //{
+            //    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            //    {
+            //        return reader.ReadToEnd().Trim();
+            //    }
+            //}
+            #endregion
+
+            var httpMessageHandler = new HttpClientHandler();
             if (url.StartsWith("https", StringComparison.OrdinalIgnoreCase))
             {
-                ServicePointManager.ServerCertificateValidationCallback =
-                        new RemoteCertificateValidationCallback(CheckValidationResult);
+                httpMessageHandler.ServerCertificateCustomValidationCallback = (message, certs, chain, error) => true;
             }
-
-            byte[] dataByte = Encoding.UTF8.GetBytes(data);
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            request.Method = "POST";
-            request.ContentType = "application/x-www-form-urlencoded;charset=utf-8";
-            request.ContentLength = dataByte.Length;
 
             if (cert != null)
             {
-                request.ClientCertificates.Add(cert);
+                httpMessageHandler.ClientCertificates.Add(cert);
             }
 
-            using (Stream outStream = await request.GetRequestStreamAsync())
+            var client = HttpClientFactory.Create(httpMessageHandler);
+            using (HttpContent httpContent = new StringContent(data, Encoding.UTF8))
             {
-                outStream.Write(dataByte, 0, dataByte.Length);
-            }
-
-            using (HttpWebResponse response = (HttpWebResponse)(await request.GetResponseAsync()))
-            {
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                {
-                    return reader.ReadToEnd().Trim();
-                }
+                httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/x-www-form-urlencoded");
+                httpContent.Headers.ContentType.CharSet = "utf-8";
+                HttpResponseMessage response = await client.PostAsync(url, httpContent);
+                return await response.Content.ReadAsStringAsync();
             }
         }
 

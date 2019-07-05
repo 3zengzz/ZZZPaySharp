@@ -68,7 +68,7 @@ namespace PaySharp.UnitTest
             var response =await _alipayGateway.Execute(request);
 
             _output.WriteLine(response.Url);
-            string result = await HttpUtil.Get(response.Url);
+            string result = await HttpUtil.GetAsync(response.Url);
             Assert.Contains("支付宝", result);
         }
 
